@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Next Mantos – Camisas de Futebol Oficiais</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0070cc;--blue-dark:#005aa3;--blue-light:#e8f4ff;
+  --red:#e53935;--green:#2e7d32;--green-light:#e8f5e9;
+  --gold:#f9a825;--orange:#f57c00;
+  --g1:#f5f5f5;--g2:#eeeeee;--g3:#e0e0e0;--g5:#9e9e9e;
+  --g6:#757575;--g7:#616161;--g8:#424242;--g9:#212121;
+  --white:#fff;
+  --sh-sm:0 1px 3px rgba(0,0,0,.12);--sh-md:0 4px 12px rgba(0,0,0,.1);--sh-lg:0 8px 32px rgba(0,0,0,.14);
+  --r:4px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+body{font-family:'Roboto',sans-serif;background:var(--g1);color:var(--g9);font-size:14px}
+
+.top-bar{background:var(--g9);color:#9e9e9e;font-size:12px;padding:7px 0}
+.tbi{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}
+.tbl,.tbr{display:flex;gap:16px;align-items:center}
+.top-bar a{color:#9e9e9e}.top-bar a:hover{color:#fff}
+.tdiv{width:1px;height:12px;background:#616161}
+
+header{background:#fff;box-shadow:var(--sh-sm);position:sticky;top:0;z-index:500}
+.hi{max-width:1280px;margin:0 auto;padding:0 20px;height:66px;display:flex;align-items:center;gap:20px}
+.logo{display:flex;flex-direction:column;line-height:1;flex-shrink:0;cursor:pointer}
+.logo-m{font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:30px;color:var(--blue);letter-spacing:-1px}
+.logo-m span{color:var(--red)}
+.logo-s{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--g5);font-weight:700}
+.h-srch{flex:1;max-width:560px}
+.sw{display:flex;width:100%;border:2px solid var(--blue);border-radius:var(--r);overflow:hidden}
+.sw input{flex:1;padding:10px 14px;font-size:14px;border:none;outline:none;color:var(--g9)}
+.sw input::placeholder{color:var(--g5)}
+.sb{background:var(--blue);color:#fff;padding:0 18px;font-size:16px;display:flex;align-items:center;transition:background .15s}
+.sb:hover{background:var(--blue-dark)}
+.h-actions{display:flex;align-items:center;gap:2px;margin-left:auto}
+.ha{display:flex;flex-direction:column;align-items:center;padding:8px 10px;border-radius:var(--r);transition:background .15s;cursor:pointer;position:relative;min-width:56px;text-align:center}
+.ha:hover{background:var(--g1)}
+.ha-icon{font-size:20px;margin-bottom:2px;position:relative}
+.ha-lbl{font-size:11px;color:var(--g6);font-weight:500;white-space:nowrap}
+.ha-lbl strong{color:var(--blue);font-size:12px;display:block}
+.cbadge{position:absolute;top:-4px;right:-6px;background:var(--red);color:#fff;font-size:10px;font-weight:700;min-width:18px;height:18px;border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 4px}
+
+nav{background:var(--blue)}
+.ni{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;align-items:center;flex-wrap:wrap}
+.ni-item{position:relative}
+.nl{display:flex;align-items:center;gap:4px;padding:11px 13px;color:#fff;font-family:'Roboto Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.4px;text-transform:uppercase;transition:background .15s;white-space:nowrap;cursor:pointer}
+.nl:hover,.ni-item:hover>.nl{background:var(--blue-dark)}
+.nl.copa{color:var(--gold)}
+.narr{font-size:9px;opacity:.7}
+.ndrop{position:absolute;top:100%;left:0;background:#fff;min-width:210px;border:1px solid var(--g3);border-top:3px solid var(--blue);box-shadow:var(--sh-lg);display:none;z-index:999;max-height:360px;overflow-y:auto}
+.ni-item:hover .ndrop{display:block}
+.ndrop a{display:block;padding:9px 16px;font-size:13px;color:var(--g8);border-bottom:1px solid var(--g2);transition:all .15s}
+.ndrop a:hover{background:var(--blue-light);color:var(--blue);padding-left:20px}
+.ndrop a:last-child{border-bottom:none}
+
+.pstrip{background:linear-gradient(90deg,#1a1a2e,#0f3460);color:#fff;text-align:center;padding:9px 20px;font-size:13px;font-weight:500}
+.pstrip strong{color:var(--gold)}
+
+.pw{max-width:1280px;margin:0 auto;padding:0 20px}
+
+/* HERO */
+.hero-sec{padding:14px 0 0}
+.hero-lay{display:grid;grid-template-columns:1fr 296px;gap:12px;align-items:start}
+.main-ban{position:relative;border-radius:var(--r);overflow:hidden;height:340px;background:var(--g9)}
+.bslide{position:absolute;inset:0;opacity:0;transition:opacity .6s;display:flex;align-items:center;padding:0 52px;background-size:cover;background-position:center}
+.bslide.active{opacity:1}
+.b1{background-color:#0a192f}.b2{background-color:#1a0808}.b3{background-color:#0a2008}
+.bslide::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.25) 60%,transparent 100%)}
+.bcon{position:relative;z-index:2}
+.bey{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:8px;font-weight:600}
+.btit{font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:42px;line-height:.95;color:#fff;text-transform:uppercase;margin-bottom:10px}
+.btit .ac{color:var(--gold);display:block}
+.bsub{font-size:14px;color:rgba(255,255,255,.7);margin-bottom:16px}
+.bprice{font-family:'Roboto Condensed',sans-serif;font-weight:700;font-size:16px;color:#fff;margin-bottom:16px}
+.bprice .val{font-size:32px;color:#7cfc00}
+.bcta{display:inline-block;background:var(--gold);color:#1a1a1a;padding:11px 24px;border-radius:var(--r);font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:13px;letter-spacing:1px;text-transform:uppercase;transition:all .2s}
+.bcta:hover{background:#ffc107;box-shadow:0 4px 16px rgba(249,168,37,.5);transform:translateY(-1px)}
+.bctls{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10}
+.bdot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:all .2s}
+.bdot.active{background:#fff;width:22px;border-radius:4px}
+.barr{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);color:#fff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;z-index:10;transition:background .2s}
+.barr:hover{background:rgba(255,255,255,.3)}
+.barr.prev{left:10px}.barr.next{right:10px}
+.sbans{display:flex;flex-direction:column;gap:12px}
+.sban{border-radius:var(--r);overflow:hidden;height:164px;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:12px;cursor:pointer;background-size:cover;background-position:center}
+.sban1{background-color:#b71c1c}.sban2{background-color:#1565c0}
+.sban::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,.75) 100%)}
+.sban-tag,.sban-tit,.sban-btn{position:relative;z-index:1}
+.sban-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:700;margin-bottom:2px}
+.sban-tit{font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:18px;color:#fff;text-transform:uppercase;line-height:1.1;margin-bottom:7px}
+.sban-btn{display:inline-block;background:rgba(255,255,255,.2);color:#fff;padding:4px 11px;border-radius:var(--r);font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;backdrop-filter:blur(4px);transition:background .2s;align-self:flex-start}
+.sban:hover .sban-btn{background:rgba(255,255,255,.35)}
+
+/* CAT PILLS */
+.cpstrip{background:#fff;margin-top:12px;border-radius:var(--r);padding:12px 18px;display:flex;gap:7px;align-items:center;overflow-x:auto;box-shadow:var(--sh-sm);flex-wrap:wrap}
+.cpstrip::-webkit-scrollbar{display:none}
+.cpill{display:flex;flex-direction:column;align-items:center;gap:4px;padding:7px 13px;border-radius:50px;border:1.5px solid var(--g3);cursor:pointer;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.cpill:hover,.cpill.active{border-color:var(--blue);background:var(--blue-light);color:var(--blue)}
+.cpi{font-size:18px}.cpn{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+
+/* SECTION HEAD */
+.shead{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:9px;border-bottom:2px solid var(--blue)}
+.shl{display:flex;align-items:center;gap:10px}
+.shi{font-size:20px}
+.shtit{font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;letter-spacing:.5px}
+.shsub{font-size:11px;color:var(--g5)}
+.vt{font-size:13px;color:var(--blue);font-weight:700;display:flex;align-items:center;gap:4px;transition:gap .15s}
+.vt:hover{gap:8px}
+
+/* LEAGUE SECTION */
+.league-sec{background:#fff;border-radius:var(--r);padding:18px 20px;margin-bottom:10px;box-shadow:var(--sh-sm)}
+.league-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--blue);cursor:pointer;user-select:none}
+.league-flag{font-size:24px}
+.league-name{font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:18px;text-transform:uppercase;letter-spacing:.5px}
+.league-count{font-size:12px;color:var(--g5);margin-left:auto}
+.league-toggle{font-size:12px;color:var(--blue);font-weight:700;background:var(--blue-light);padding:3px 10px;border-radius:12px;margin-left:8px}
+
+/* PRODUCT GRID */
+.pgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.pgrid.hidden{display:none}
+
+/* PRODUCT CARD */
+.pcard{border:1.5px solid var(--g2);border-radius:var(--r);overflow:hidden;background:#fff;cursor:pointer;transition:all .25s;position:relative;display:flex;flex-direction:column}
+.pcard:hover{border-color:var(--blue);box-shadow:var(--sh-md);transform:translateY(-3px)}
+.cwish{position:absolute;top:8px;right:8px;width:28px;height:28px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:var(--sh-sm);z-index:2;opacity:0;transition:opacity .2s}
+.pcard:hover .cwish{opacity:1}
+.cwish:hover{color:var(--red)}
+.cbadge2{position:absolute;top:8px;left:8px;z-index:2;font-size:10px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;padding:3px 6px;border-radius:2px;font-family:'Roboto Condensed',sans-serif}
+.bn{background:var(--blue);color:#fff}.bo{background:var(--red);color:#fff}.bc{background:var(--gold);color:#333}
+.cimg{background:var(--g1);height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.cimg img{width:100%;height:100%;object-fit:contain;padding:10px;transition:transform .3s}
+.pcard:hover .cimg img{transform:scale(1.07) translateY(-4px)}
+.cimg .ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:var(--g5);width:100%;height:100%}
+.ph-icon{font-size:52px;opacity:.35}
+.ph-txt{font-size:10px;font-weight:600;letter-spacing:.5px;color:var(--g5)}
+.cbody{padding:10px;flex:1;display:flex;flex-direction:column}
+.cbrand{font-size:10px;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:1px}
+.cname{font-size:12px;color:var(--g8);line-height:1.3;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.crat{display:flex;align-items:center;gap:3px;margin-bottom:6px}
+.stars{color:var(--gold);font-size:11px;letter-spacing:-1px}
+.rcnt{font-size:10px;color:var(--g5)}
+.cpold{font-size:10px;color:var(--g5);text-decoration:line-through}
+.cprice{font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--g9);line-height:1}
+.cpinst{font-size:10px;color:var(--g6);margin-top:1px}
+.cdisc{display:inline-block;background:var(--green-light);color:var(--green);font-size:10px;font-weight:700;padding:1px 4px;border-radius:2px;margin-left:4px}
+.cadd{margin-top:8px;width:100%;background:var(--blue);color:#fff;padding:8px;border-radius:var(--r);font-family:'Roboto Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.5px;text-transform:uppercase;transition:background .15s;display:flex;align-items:center;justify-content:center;gap:5px}
+.cadd:hover{background:var(--blue-dark)}
+.cadd:active{transform:scale(.98)}
+
+/* RESULTS INFO */
+.results-bar{background:#fff;border-radius:var(--r);padding:12px 18px;margin-bottom:10px;box-shadow:var(--sh-sm);display:flex;align-items:center;justify-content:space-between}
+.results-info{font-size:13px;color:var(--g6)}
+.results-info strong{color:var(--g9)}
+.clear-filter{font-size:12px;color:var(--blue);font-weight:700;cursor:pointer}
+.clear-filter:hover{text-decoration:underline}
+
+/* COPA BANNER */
+.copaban{margin-bottom:10px;border-radius:var(--r);overflow:hidden;background:linear-gradient(110deg,#0a0a0a,#1a1400,#2d2200,#0a0a0a);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;position:relative;box-shadow:var(--sh-sm)}
+.copaban::before{content:'⚽';position:absolute;font-size:220px;right:100px;top:50%;transform:translateY(-50%);opacity:.04}
+.copatxt{position:relative;z-index:1}
+.copakick{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px}
+.copatit{font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:46px;color:#fff;text-transform:uppercase;line-height:.95;margin-bottom:12px}
+.copatit em{color:var(--gold);font-style:normal;display:block}
+.copadesc{font-size:14px;color:rgba(255,255,255,.55);max-width:440px;line-height:1.6}
+.copar{position:relative;z-index:1;text-align:right}
+.copaflags{display:flex;gap:10px;font-size:36px;margin-bottom:16px;justify-content:flex-end}
+.copabtn{display:inline-block;background:var(--gold);color:#1a1a1a;padding:13px 28px;border-radius:var(--r);font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:14px;letter-spacing:1px;text-transform:uppercase;transition:all .2s}
+.copabtn:hover{background:#ffc107;box-shadow:0 6px 24px rgba(249,168,37,.4);transform:translateY(-2px)}
+
+/* BRANDS */
+.brands{background:#fff;border-radius:var(--r);padding:16px 20px;margin-bottom:10px;box-shadow:var(--sh-sm)}
+.btitle{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--g5);font-weight:700;margin-bottom:10px;text-align:center}
+.brow{display:flex;gap:0;justify-content:center;align-items:center;flex-wrap:wrap}
+.bchip{padding:8px 22px;font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:14px;letter-spacing:1px;color:var(--g6);border-right:1px solid var(--g2);transition:color .15s;cursor:pointer}
+.bchip:last-child{border-right:none}.bchip:hover{color:var(--blue)}
+
+/* TRUST */
+.ftrust{background:#fff;border-top:1px solid var(--g2);padding:22px 0;margin-top:8px}
+.trow{max-width:1280px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.titem{display:flex;gap:10px;align-items:flex-start}
+.ticon{font-size:24px;flex-shrink:0}
+.ttit{font-weight:700;font-size:13px;color:var(--g9);margin-bottom:2px}
+.tdesc{font-size:11px;color:var(--g5);line-height:1.5}
+
+/* FOOTER */
+footer{background:var(--g9);color:rgba(255,255,255,.65);padding:40px 0 20px}
+.fi{max-width:1280px;margin:0 auto;padding:0 20px}
+.fgrid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr 1.2fr;gap:32px;margin-bottom:32px}
+.fbn{font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:28px;color:#fff;margin-bottom:3px}
+.fbn span{color:var(--red)}
+.fbs{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:12px}
+.fdesc{font-size:13px;line-height:1.8;color:rgba(255,255,255,.45);margin-bottom:16px}
+.fsocs{display:flex;gap:6px}
+.fsoc{width:30px;height:30px;background:rgba(255,255,255,.07);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:13px;transition:background .15s;cursor:pointer}
+.fsoc:hover{background:var(--blue)}
+.fct{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:#fff;margin-bottom:10px}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:6px}
+.flinks li a{font-size:13px;color:rgba(255,255,255,.45);transition:color .15s}
+.flinks li a:hover{color:#fff}
+.pmeth{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+.pmb{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:4px 8px;font-size:10px;font-weight:700;color:rgba(255,255,255,.65);letter-spacing:.5px}
+.fcontact{font-size:12px;color:rgba(255,255,255,.45);line-height:2}
+.fbot{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(255,255,255,.25)}
+
+/* WPP FLOAT */
+.wfloat{position:fixed;bottom:22px;right:22px;z-index:900;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:25px;box-shadow:0 4px 20px rgba(37,211,102,.5);cursor:pointer;transition:all .25s;text-decoration:none}
+.wfloat:hover{transform:scale(1.1);box-shadow:0 8px 32px rgba(37,211,102,.6)}
+.wring{position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:wr 2s ease-out infinite}
+@keyframes wr{0%{transform:scale(1);opacity:1}100%{transform:scale(1.6);opacity:0}}
+
+/* DRAWER */
+.doverlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;opacity:0;pointer-events:none;transition:opacity .3s}
+.doverlay.open{opacity:1;pointer-events:auto}
+.cdrawer{position:fixed;top:0;right:-470px;bottom:0;width:450px;background:#fff;z-index:1001;transition:right .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-8px 0 32px rgba(0,0,0,.2)}
+.cdrawer.open{right:0}
+.dhead{background:var(--blue);color:#fff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
+.dtit{font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:19px;text-transform:uppercase;letter-spacing:.5px}
+.dclose{width:30px;height:30px;background:rgba(255,255,255,.15);border-radius:50%;color:#fff;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.dclose:hover{background:rgba(255,255,255,.3)}
+.ditems{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:9px}
+.dempty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--g5);text-align:center}
+.dei{font-size:48px}.det{font-size:14px;font-weight:500}.des{font-size:12px}
+.cicard{display:grid;grid-template-columns:70px 1fr auto;gap:10px;align-items:center;background:var(--g1);border-radius:var(--r);padding:10px;border:1px solid var(--g2)}
+.ciimg{width:70px;height:70px;background:#fff;border-radius:var(--r);display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--g2)}
+.ciimg img{width:100%;height:100%;object-fit:contain;padding:4px}
+.ci-ph{font-size:34px}
+.cibrand{font-size:10px;color:var(--blue);font-weight:700;text-transform:uppercase}
+.ciname{font-size:12px;font-weight:500;color:var(--g8);line-height:1.3;margin-bottom:3px}
+.cidet{font-size:10px;color:var(--g5);margin-bottom:6px}
+.ciqty{display:flex;align-items:center;gap:5px}
+.qctrl{width:22px;height:22px;border:1.5px solid var(--g3);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--g7);transition:all .15s}
+.qctrl:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light)}
+.qn{font-size:13px;font-weight:700;min-width:18px;text-align:center}
+.ciprice{font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:18px;color:var(--g9);text-align:right}
+.cirm{font-size:10px;color:var(--g5);cursor:pointer;transition:color .15s;display:block;text-align:right;margin-top:3px}
+.cirm:hover{color:var(--red)}
+.dfooter{border-top:2px solid var(--g2);padding:12px 16px;background:#fff}
+.dtr{display:flex;justify-content:space-between;font-size:13px;color:var(--g6);padding:3px 0}
+.dtr.main{font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:19px;color:var(--g9);border-top:1.5px solid var(--g2);padding-top:8px;margin-top:4px}
+.dtr.fg span:last-child{color:var(--green);font-weight:700}
+.bwpp{width:100%;background:#25d366;color:#fff;padding:13px;border-radius:var(--r);font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:15px;letter-spacing:.5px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s;margin-bottom:7px}
+.bwpp:hover{background:#20bc5a;box-shadow:0 6px 24px rgba(37,211,102,.4);transform:translateY(-2px)}
+.bcont{width:100%;background:transparent;color:var(--blue);padding:8px;border-radius:var(--r);font-size:13px;font-weight:700;transition:background .15s}
+.bcont:hover{background:var(--blue-light)}
+
+/* MODAL */
+.mbg{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:2000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;padding:20px}
+.mbg.open{opacity:1;pointer-events:auto}
+.pmodal{background:#fff;border-radius:6px;width:100%;max-width:820px;max-height:90vh;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;transform:scale(.96) translateY(14px);transition:transform .25s}
+.mbg.open .pmodal{transform:scale(1) translateY(0)}
+.mgal{background:var(--g1);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;border-radius:6px 0 0 6px;overflow:hidden}
+.mgal img{width:100%;height:100%;object-fit:contain;padding:22px;max-height:360px}
+.mgal .mgal-ph{font-size:110px;filter:drop-shadow(0 12px 24px rgba(0,0,0,.12))}
+.mx{position:absolute;top:10px;right:10px;width:30px;height:30px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:var(--sh-sm);color:var(--g7);transition:all .15s;z-index:5}
+.mx:hover{background:var(--red);color:#fff}
+.mbadge-wrap{position:absolute;top:10px;left:10px;z-index:5}
+.minfo{padding:24px;display:flex;flex-direction:column;gap:13px}
+.mbrand{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);font-weight:700}
+.mname{font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:22px;line-height:1.15;color:var(--g9)}
+.mrat{display:flex;align-items:center;gap:6px}
+.mdesc{font-size:12px;color:var(--g6);line-height:1.7;border-top:1px solid var(--g2);padding-top:10px}
+.mprice{border-top:1px solid var(--g2);padding-top:10px}
+.mpold{font-size:12px;color:var(--g5);text-decoration:line-through}
+.mpmain{font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:34px;color:var(--g9);line-height:1.1}
+.mpinst{font-size:11px;color:var(--g6);margin-top:2px}
+.mdisc{display:inline-block;background:var(--green-light);color:var(--green);font-size:12px;font-weight:700;padding:2px 6px;border-radius:3px;margin-left:6px}
+.flbl{font-size:11px;font-weight:700;color:var(--g7);letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px}
+.szgrid{display:flex;gap:5px;flex-wrap:wrap}
+.sz{min-width:44px;height:36px;border:1.5px solid var(--g3);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-family:'Roboto Condensed',sans-serif;font-weight:700;font-size:12px;color:var(--g7);cursor:pointer;transition:all .15s;padding:0 8px}
+.sz:hover,.sz.sel{border-color:var(--blue);color:var(--blue);background:var(--blue-light)}
+.prow{display:grid;grid-template-columns:1fr 72px;gap:8px}
+.finput{width:100%;border:1.5px solid var(--g3);border-radius:var(--r);padding:8px 11px;font-size:13px;color:var(--g9);outline:none;transition:border-color .15s}
+.finput:focus{border-color:var(--blue)}
+.badd{width:100%;background:var(--blue);color:#fff;padding:13px;border-radius:var(--r);font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:14px;letter-spacing:.5px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:7px;transition:all .2s}
+.badd:hover{background:var(--blue-dark);box-shadow:0 4px 16px rgba(0,112,204,.4)}
+
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(70px);background:var(--g9);color:#fff;padding:12px 22px;border-radius:24px;font-size:14px;font-weight:500;z-index:9999;display:flex;align-items:center;gap:9px;box-shadow:var(--sh-lg);transition:transform .35s cubic-bezier(.4,0,.2,1);white-space:nowrap}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.tck{color:#7cfc00;font-size:17px}
+
+@media(max-width:1024px){
+  .pgrid{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:768px){
+  .hero-lay{grid-template-columns:1fr}
+  .sbans{flex-direction:row}
+  .sban{flex:1}
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .fgrid{grid-template-columns:1fr 1fr;gap:24px}
+  .trow{grid-template-columns:1fr 1fr}
+  .copaban{flex-direction:column;gap:24px}
+  .copar{text-align:left}.copaflags{justify-content:flex-start}
+  .pmodal{grid-template-columns:1fr}
+  .mgal{min-height:200px;border-radius:6px 6px 0 0}
+  .ni .ni-item:nth-child(n+6){display:none}
+}
+@media(max-width:480px){
+  .top-bar{font-size:11px;padding:5px 0}
+  .tbi{padding:0 15px}
+  .tbl,.tbr{gap:12px}
+  header{position:relative}
+  .hi{padding:0 15px;height:auto;flex-direction:column;gap:12px;padding-top:10px;padding-bottom:10px}
+  .logo{flex-shrink:0;margin:0 auto}
+  .logo-m{font-size:26px}
+  .logo-s{font-size:8px}
+  .h-srch{order:2;width:100%;max-width:none}
+  .sw{border-radius:6px}
+  .sw input{padding:8px 12px;font-size:13px}
+  .sb{padding:0 16px;font-size:14px}
+  .h-actions{order:3;margin-left:0;justify-content:center;gap:1px}
+  .ha{min-width:50px;padding:6px 8px}
+  .ha-icon{font-size:18px;margin-bottom:1px}
+  .ha-lbl{font-size:10px}
+  .ha-lbl strong{font-size:11px}
+  .cbadge{font-size:9px;min-width:16px;height:16px;padding:0 3px}
+  nav{background:#fff;border-top:1px solid var(--g2)}
+  .ni{flex-wrap:wrap;padding:0 15px}
+  .ni-item{display:block;width:100%;border-bottom:1px solid var(--g2)}
+  .nl{display:flex;width:100%;padding:12px 0;color:#fff;background:var(--blue);border-radius:0;margin:0}
+  .nl:hover{background:var(--blue-dark)}
+  .nl.copa{background:var(--gold);color:#1a1a1a}
+  .narr{display:none}
+  .ndrop{background:#fff;border:none;border-top:2px solid var(--blue);box-shadow:none;display:block;max-height:none;overflow:visible}
+  .ndrop a{border-bottom:1px solid var(--g2);padding:10px 15px}
+  .ndrop a:hover{background:var(--blue-light);padding-left:15px}
+  .pstrip{font-size:12px;padding:7px 15px}
+  .pw{padding:0 15px}
+  .hero-sec{padding:10px 0 0}
+  .hero-lay{gap:8px}
+  .main-ban{height:260px}
+  .bcon{padding:0 20px}
+  .bey{font-size:10px}
+  .btit{font-size:28px}
+  .bsub{font-size:13px;margin-bottom:12px}
+  .bprice{font-size:14px;margin-bottom:12px}
+  .bprice .val{font-size:26px}
+  .bcta{padding:9px 20px;font-size:12px}
+  .bctls{bottom:6px}
+  .bdot{width:6px;height:6px}
+  .bdot.active{width:18px}
+  .barr{width:32px;height:32px;font-size:18px}
+  .barr.prev{left:6px}
+  .barr.next{right:6px}
+  .sbans{flex-direction:column;gap:8px}
+  .sban{height:140px}
+  .sban-tag{font-size:9px}
+  .sban-tit{font-size:16px}
+  .sban-btn{font-size:10px;padding:3px 9px}
+  .cpstrip{margin-top:8px;padding:10px 15px;border-radius:6px}
+  .cpstrip::-webkit-scrollbar{display:none}
+  .cpill{gap:3px;padding:6px 11px;border-radius:40px}
+  .cpi{font-size:16px}
+  .cpn{font-size:9px}
+  .shead{margin-bottom:12px;padding-bottom:7px}
+  .shl{gap:8px}
+  .shi{font-size:18px}
+  .shtit{font-size:18px}
+  .shsub{font-size:10px}
+  .vt{font-size:12px}
+  .league-sec{padding:14px 15px;margin-bottom:8px}
+  .league-header{gap:10px;margin-bottom:12px;padding-bottom:8px}
+  .league-flag{font-size:22px}
+  .league-name{font-size:16px}
+  .league-count{font-size:11px}
+  .league-toggle{font-size:11px;padding:2px 8px;margin-left:6px}
+  .pgrid{grid-template-columns:1fr;gap:8px}
+  .pcard{border-radius:6px}
+  .cwish{top:6px;right:6px;width:24px;height:24px;font-size:12px}
+  .cbadge2{top:6px;left:6px;font-size:9px;padding:2px 5px}
+  .cimg{height:160px}
+  .cimg img{padding:8px}
+  .cbody{padding:8px}
+  .cbrand{font-size:9px}
+  .cname{font-size:11px;margin-bottom:4px}
+  .crat{gap:2px;margin-bottom:4px}
+  .stars{font-size:10px}
+  .rcnt{font-size:9px}
+  .cpold{font-size:9px}
+  .cprice{font-size:18px}
+  .cpinst{font-size:9px;margin-top:0}
+  .cdisc{font-size:9px;padding:1px 3px}
+  .cadd{margin-top:6px;padding:7px;border-radius:6px;font-size:11px}
+  .results-bar{padding:10px 15px;margin-bottom:8px}
+  .results-info{font-size:12px}
+  .clear-filter{font-size:11px}
+  .copaban{margin-bottom:8px;border-radius:6px;padding:30px 20px}
+  .copaban::before{font-size:160px;right:80px;top:50%}
+  .copatxt{gap:10px}
+  .copakick{font-size:10px}
+  .copatit{font-size:36px;margin-bottom:10px}
+  .copadesc{font-size:13px;max-width:none;line-height:1.5}
+  .copar{gap:14px}
+  .copaflags{font-size:28px;margin-bottom:12px}
+  .copabtn{padding:11px 24px;font-size:13px}
+  .brands{border-radius:6px;padding:14px 15px;margin-bottom:8px}
+  .btitle{font-size:9px;margin-bottom:8px}
+  .brow{gap:0}
+  .bchip{padding:6px 18px;font-size:12px;border-right:1px solid var(--g2)}
+  .ftrust{padding:18px 0;margin-top:6px}
+  .trow{gap:12px}
+  .titem{gap:8px}
+  .ticon{font-size:22px}
+  .ttit{font-size:12px;margin-bottom:1px}
+  .tdesc{font-size:10px}
+  footer{padding:30px 0 15px}
+  .fi{padding:0 15px}
+  .fgrid{grid-template-columns:1fr;gap:24px;margin-bottom:24px}
+  .fbn{font-size:24px;margin-bottom:2px}
+  .fbs{margin-bottom:10px}
+  .fdesc{font-size:12px;margin-bottom:14px}
+  .fsocs{gap:5px}
+  .fsoc{width:28px;height:28px;font-size:12px}
+  .fct{font-size:9px;margin-bottom:8px}
+  .flinks{gap:5px}
+  .flinks li a{font-size:12px}
+  .pmeth{gap:4px;margin-bottom:10px}
+  .pmb{padding:3px 7px;font-size:9px}
+  .fcontact{font-size:11px}
+  .fbot{font-size:10px;padding-top:15px}
+  .wfloat{bottom:15px;right:15px;width:48px;height:48px;font-size:22px}
+  .wring{inset:-4px}
+  .doverlay{}
+  .cdrawer{right:-100%;width:100%;max-width:400px}
+  .dhead{padding:12px 16px}
+  .dtit{font-size:17px}
+  .dclose{width:28px;height:28px;font-size:14px}
+  .ditems{padding:10px}
+  .dempty{gap:8px}
+  .dei{font-size:40px}
+  .det{font-size:13px}
+  .des{font-size:11px}
+  .cicard{grid-template-columns:60px 1fr auto;gap:8px;padding:8px}
+  .ciimg{width:60px;height:60px}
+  .ciimg img{padding:3px}
+  .cibrand{font-size:9px}
+  .ciname{font-size:11px;margin-bottom:2px}
+  .cidet{font-size:9px;margin-bottom:4px}
+  .ciqty{gap:4px}
+  .qctrl{width:20px;height:20px;font-size:12px}
+  .qn{font-size:12px;min-width:16px}
+  .ciprice{font-size:16px}
+  .cirm{font-size:9px}
+  .dfooter{border-top:1px solid var(--g2);padding:10px 14px}
+  .dtr{font-size:12px;padding:2px 0}
+  .dtr.main{font-size:16px;padding-top:6px;margin-top:2px}
+  .bwpp{padding:11px;font-size:13px;margin-bottom:5px}
+  .bcont{padding:6px;font-size:12px}
+  .mbg{padding:15px}
+  .pmodal{max-width:none;max-height:90vh}
+  .mgal{min-height:150px;border-radius:6px 6px 0 0}
+  .mgal img{max-height:150px}
+  .mgal .mgal-ph{font-size:80px}
+  .mx{top:8px;right:8px}
+  .mbadge-wrap{top:8px;left:8px}
+  .minfo{padding:16px;gap:10px}
+  .mbrand{font-size:10px}
+  .mname{font-size:18px;line-height:1.1}
+  .mrat{gap:4px}
+  .mrat span{font-size:10px}
+  .mdesc{font-size:11px;padding-top:6px}
+  .mprice{padding-top:6px}
+  .mpold{font-size:11px}
+  .mpmain{font-size:28px}
+  .mpinst{font-size:10px}
+  .mdisc{font-size:11px;padding:1px 4px}
+  .flbl{font-size:10px;margin-bottom:4px}
+  .szgrid{gap:4px}
+  .sz{min-width:38px;height:32px;font-size:11px;padding:0 6px}
+  .prow{gap:6px}
+  .finput{padding:6px 9px;font-size:12px}
+  .badd{padding:10px;font-size:13px}
+  .toast{bottom:15px;padding:10px 18px;font-size:13px}
+  .tck{font-size:15px}
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="tbi">
+    <div class="tbl">
+      <span>📦 Frete grátis acima de R$ 199</span><div class="tdiv"></div>
+      <span>🔒 Compra 100% segura</span><div class="tdiv"></div>
+      <span>🔁 Troca grátis em 30 dias</span>
+    </div>
+    <div class="tbr" id="tbr-user">
+      <a href="#" onclick="openAuthModal('login');return false" id="account-link">Minha Conta</a><div class="tdiv"></div>
+      <a href="#" onclick="openMyOrders();return false">Meus Pedidos</a><div class="tdiv"></div>
+      <a href="#" onclick="openHelp();return false">Ajuda</a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="hi">
+    <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <div class="logo-m">NE<span>X</span>T</div>
+      <div class="logo-s">Mantos</div>
+    </div>
+    <div class="h-srch">
+      <div class="sw">
+        <input type="text" id="srch" placeholder="Busque por time, liga, camisa...">
+        <button class="sb" onclick="doSearch()">🔍</button>
+      </div>
+    </div>
+    <div class="h-actions">
+      <div class="ha"><div class="ha-icon">👤</div><div class="ha-lbl">Entrar /<strong>Cadastrar</strong></div></div>
+      <div class="ha"><div class="ha-icon">❤️</div><div class="ha-lbl">Minha<strong>Lista</strong></div></div>
+      <div class="ha" onclick="openCart()">
+        <div class="ha-icon">🛒<span class="cbadge" id="cbadge">0</span></div>
+        <div class="ha-lbl">Meu<strong>Carrinho</strong></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="ni">
+    <div class="ni-item">
+      <div class="nl" onclick="fc('femininas')">👗 Femininas <span class="narr">▼</span></div>
+      <div class="ndrop"><a href="#" onclick="fc('femininas');return false">Ver todas femininas</a><a href="#" onclick="fc('brasileiros');return false">Times Brasileiros</a><a href="#" onclick="fc('europeus');return false">Times Europeus</a></div>
+    </div>
+    <div class="ni-item">
+      <div class="nl" onclick="fc('masculinas')">👕 Masculinas <span class="narr">▼</span></div>
+      <div class="ndrop"><a href="#" onclick="fc('masculinas');return false">Ver todas masculinas</a><a href="#" onclick="fc('brasileiros');return false">Times Brasileiros</a><a href="#" onclick="fc('europeus');return false">Times Europeus</a></div>
+    </div>
+    <div class="ni-item">
+      <div class="nl" onclick="fc('brasileiros')">🇧🇷 Brasileirão <span class="narr">▼</span></div>
+      <div class="ndrop" id="drop-br"></div>
+    </div>
+    <div class="ni-item">
+      <div class="nl" onclick="fc('premier')">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League <span class="narr">▼</span></div>
+      <div class="ndrop" id="drop-pl"></div>
+    </div>
+    <div class="ni-item">
+      <div class="nl" onclick="fc('laliga')">🇪🇸 La Liga <span class="narr">▼</span></div>
+      <div class="ndrop" id="drop-ll"></div>
+    </div>
+    <div class="ni-item">
+      <div class="nl" onclick="fc('seriea')">🇮🇹 Serie A <span class="narr">▼</span></div>
+      <div class="ndrop" id="drop-sa"></div>
+    </div>
+    <div class="ni-item">
+      <div class="nl" onclick="fc('bundesliga')">🇩🇪 Bundesliga <span class="narr">▼</span></div>
+      <div class="ndrop" id="drop-bl"></div>
+    </div>
+    <div class="ni-item">
+      <div class="nl" onclick="fc('ligue1')">🇫🇷 Ligue 1 <span class="narr">▼</span></div>
+      <div class="ndrop" id="drop-l1"></div>
+    </div>
+    <div class="ni-item">
+      <div class="nl copa" onclick="fc('copa')">🏆 Copa 2026 <span class="narr">▼</span></div>
+      <div class="ndrop" id="drop-copa"></div>
+    </div>
+  </div>
+</nav>
+
+<div class="pstrip">⚡<strong>PROMOÇÃO!</strong> → CAMISAS TAILANDESAS 1:1 · POR APENAS <strong>R$ 120</strong></div>
+
+<div class="pw">
+  <div class="hero-sec">
+    <div class="hero-lay">
+      <div class="main-ban">
+        <div class="bslide b1 active" id="bs0" style="background-image:url('fotos/banners/banner-1.jpg')">
+          <div class="bcon">
+            <div class="bey">⚡ Maior seleção do Brasil</div>
+            <h1 class="btit">130+ CAMISAS<br><span class="ac">6 LIGAS</span></h1>
+            <div class="bsub">Brasileirão · Premier · La Liga · Serie A · Bundesliga · Ligue 1</div>
+            <div class="bprice">a partir de <span class="val">R$149</span></div>
+            <a class="bcta" href="#" onclick="document.getElementById('sec-all').scrollIntoView({behavior:'smooth'});return false">VER TUDO →</a>
+          </div>
+        </div>
+        <div class="bslide b2" id="bs1" style="background-image:url('fotos/banners/banner-2.jpg')">
+          <div class="bcon">
+            <div class="bey">🔥 Lançamento 2026</div>
+            <h1 class="btit">FLAMENGO<br><span class="ac">2026</span></h1>
+            <div class="bsub">Camisa 1:1 Flamngo 2026</div>
+            <div class="bprice">por apenas <span class="val">R$120</span></div>
+            <a class="bcta" href="#" onclick="fc('brasileiros');return false" style="background:var(--red);color:#fff">COMPRAR AGORA →</a>
+          </div>
+        </div>
+        <div class="bslide b3" id="bs2" style="background-image:url('fotos/banners/banner-3.jpg')">
+          <div class="bcon">
+            <div class="bey">🌍 Copa do Mundo 2026</div>
+            <h1 class="btit">BRASIL<br><span class="ac" style="color:var(--gold)">2026</span></h1>
+            <div class="bsub">32 seleções já disponíveis</div>
+            <div class="bprice">edição especial <span class="val">R$249</span></div>
+            <a class="bcta" href="#" onclick="fc('copa');return false" style="background:var(--gold)">VER COPA 2026 →</a>
+          </div>
+        </div>
+        <button class="barr prev" onclick="sp()">‹</button>
+        <button class="barr next" onclick="sn()">›</button>
+        <div class="bctls"><div class="bdot active" onclick="gs(0)"></div><div class="bdot" onclick="gs(1)"></div><div class="bdot" onclick="gs(2)"></div></div>
+      </div>
+      <div class="sbans">
+        <div class="sban sban1" style="background-image:url('fotos/banners/side-brasileiros.jpg')" onclick="fc('brasileiros')">
+          <div class="sban-tag">🇧🇷 Brasileirão Série A</div>
+          <div class="sban-tit">20 TIMES<br>BRASILEIROS</div>
+          <span class="sban-btn">VER MAIS →</span>
+        </div>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="cpstrip" id="pills">
+      <div class="cpill active" onclick="sp2(this,'all')"><span class="cpi">🏠</span><span class="cpn">Todos</span></div>
+      <div class="cpill" onclick="sp2(this,'brasileiros')"><span class="cpi">🇧🇷</span><span class="cpn">Brasileirão</span></div>
+      <div class="cpill" onclick="sp2(this,'premier')"><span class="cpi">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="cpn">Premier</span></div>
+      <div class="cpill" onclick="sp2(this,'laliga')"><span class="cpi">🇪🇸</span><span class="cpn">La Liga</span></div>
+      <div class="cpill" onclick="sp2(this,'seriea')"><span class="cpi">🇮🇹</span><span class="cpn">Serie A</span></div>
+      <div class="cpill" onclick="sp2(this,'bundesliga')"><span class="cpi">🇩🇪</span><span class="cpn">Bundesliga</span></div>
+      <div class="cpill" onclick="sp2(this,'ligue1')"><span class="cpi">🇫🇷</span><span class="cpn">Ligue 1</span></div>
+      <div class="cpill" onclick="sp2(this,'copa')" style="border-color:var(--gold)"><span class="cpi">🏆</span><span class="cpn" style="color:var(--orange)">Copa 2026</span></div>
+      <div class="cpill" onclick="sp2(this,'femininas')"><span class="cpi">👗</span><span class="cpn">Femininas</span></div>
+      <div class="cpill" onclick="sp2(this,'sale')"><span class="cpi">🔥</span><span class="cpn">Ofertas</span></div>
+    </div>
+  </div>
+
+  <!-- RESULTS BAR (hidden by default) -->
+  <div class="results-bar" id="results-bar" style="display:none">
+    <div class="results-info">Mostrando <strong id="results-count">0</strong> camisas</div>
+    <span class="clear-filter" onclick="clearFilter()">✕ Limpar filtro</span>
+  </div>
+
+  <!-- ALL LEAGUES RENDERED HERE -->
+  <div id="sec-all"></div>
+
+  <!-- COPA BANNER -->
+  <div class="copaban">
+    <div class="copatxt">
+      <div class="copakick">🏆 USA · CANADÁ · MÉXICO — JUNHO 2026</div>
+      <h2 class="copatit">COPA DO MUNDO<br><em>2026</em></h2>
+      <p class="copadesc">Todas as 32 seleções classificadas disponíveis. Garanta a sua antes que acabe!</p>
+    </div>
+    <div class="copar">
+      <div class="copaflags">🇧🇷 🇦🇷 🇫🇷 🇩🇪 🇵🇹 🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
+      <a class="copabtn" href="#" onclick="fc('copa');return false">VER COLEÇÃO COPA 2026 →</a>
+    </div>
+  </div>
+
+  <div class="brands">
+    <div class="btitle">Nossas Marcas</div>
+    <div class="brow">
+      <div class="bchip">ADIDAS</div><div class="bchip">NIKE</div><div class="bchip">PUMA</div>
+      <div class="bchip">UMBRO</div><div class="bchip">PENALTY</div><div class="bchip">KAPPA</div>
+      <div class="bchip">NEW BALANCE</div><div class="bchip">LE COQ SPORTIF</div>
+    </div>
+  </div>
+</div>
+
+<div class="ftrust">
+  <div class="trow">
+    <div class="titem"><div class="ticon">🚚</div><div><div class="ttit">Frete Grátis</div><div class="tdesc">Compras acima de R$ 199 para todo o Brasil</div></div></div>
+    <div class="titem"><div class="ticon">🔒</div><div><div class="ttit">Compra Segura</div><div class="tdesc">SSL · Dados protegidos com criptografia</div></div></div>
+    <div class="titem"><div class="ticon">🔁</div><div><div class="ttit">Troca Fácil</div><div class="tdesc">Devolução grátis em até 30 dias</div></div></div>
+    <div class="titem"><div class="ticon">💬</div><div><div class="ttit">Atendimento WhatsApp</div><div class="tdesc">Seg–Sáb 9h às 18h · Resposta rápida</div></div></div>
+  </div>
+</div>
+
+<footer>
+  <div class="fi">
+    <div class="fgrid">
+      <div>
+        <div class="fbn">NE<span>X</span>T</div><div class="fbs">Mantos</div>
+        <p class="fdesc">As melhores camisas de futebol com personalização e entrega rápida para todo o Brasil. 130+ camisas de 6 ligas.</p>
+        <div class="fsocs"><div class="fsoc">📸</div><div class="fsoc">💬</div><div class="fsoc">🎵</div><div class="fsoc">📘</div><div class="fsoc">▶️</div></div>
+      </div>
+      <div>
+        <div class="fct">Ligas</div>
+        <ul class="flinks">
+          <li><a href="#" onclick="fc('brasileiros');return false">🇧🇷 Brasileirão</a></li>
+          <li><a href="#" onclick="fc('premier');return false">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League</a></li>
+          <li><a href="#" onclick="fc('laliga');return false">🇪🇸 La Liga</a></li>
+          <li><a href="#" onclick="fc('seriea');return false">🇮🇹 Serie A</a></li>
+          <li><a href="#" onclick="fc('bundesliga');return false">🇩🇪 Bundesliga</a></li>
+          <li><a href="#" onclick="fc('ligue1');return false">🇫🇷 Ligue 1</a></li>
+          <li><a href="#" onclick="fc('copa');return false" style="color:var(--gold)">🏆 Copa 2026</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="fct">Informações</div>
+        <ul class="flinks">
+          <li><a href="#">Sobre Nós</a></li><li><a href="#">Guia de Tamanhos</a></li>
+          <li><a href="#">Como Personalizar</a></li><li><a href="#">Trocas e Devoluções</a></li>
+          <li><a href="#">Rastrear Pedido</a></li><li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="fct">Atendimento</div>
+        <div class="fcontact">📱 (XX) XXXXX-XXXX<br><br>📧 contato@nextmantos.com.br<br><br>🕐 Seg–Sáb: 9h às 18h</div>
+      </div>
+      <div>
+        <div class="fct">Pagamento</div>
+        <div class="pmeth"><span class="pmb">PIX</span><span class="pmb">BOLETO</span><span class="pmb">VISA</span><span class="pmb">MASTER</span><span class="pmb">ELO</span><span class="pmb">AMEX</span></div>
+        <div class="fcontact">💳 Até <strong style="color:#fff;font-size:15px">12x sem juros</strong><br><br>🔒 SSL · PCI DSS Compliant</div>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 Next Mantos. Todos os direitos reservados.</span>
+      <span>Feito com ❤️ para torcedores de todo o Brasil</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wfloat" href="https://wa.me/55XXXXXXXXXXX" target="_blank"><div class="wring"></div>💬</a>
+
+<div class="doverlay" id="doverlay" onclick="closeCart()"></div>
+<div class="cdrawer" id="cdrawer">
+  <div class="dhead"><div class="dtit">🛒 Meu Carrinho</div><button class="dclose" onclick="closeCart()">✕</button></div>
+  <div class="ditems" id="ditems"></div>
+  <div id="dfooter"></div>
+</div>
+
+<div class="mbg" id="mbg" onclick="if(event.target===this)closeModal()">
+  <div class="pmodal">
+    <div class="mgal" id="mgal">
+      <button class="mx" onclick="closeModal()">✕</button>
+      <div class="mbadge-wrap" id="mbadge"></div>
+      <img id="mimg" src="" alt="" style="display:none">
+      <span class="mgal-ph" id="mph"></span>
+    </div>
+    <div class="minfo">
+      <div><div class="mbrand" id="mbrand"></div><div class="mname" id="mname"></div></div>
+      <div class="mrat"><span class="stars">★★★★★</span><span style="font-size:11px;color:var(--g6)" id="mrev"></span></div>
+      <p class="mdesc" id="mdesc"></p>
+      <div class="mprice">
+        <div id="mpold"></div>
+        <div style="display:flex;align-items:baseline;gap:4px"><div class="mpmain" id="mpmain"></div><span id="mdisc"></span></div>
+        <div class="mpinst" id="mpinst"></div>
+      </div>
+      <div>
+        <div class="flbl">Tamanho</div>
+        <div class="szgrid"><div class="sz" onclick="ss(this)">PP</div><div class="sz sel" onclick="ss(this)">P</div><div class="sz" onclick="ss(this)">M</div><div class="sz" onclick="ss(this)">G</div><div class="sz" onclick="ss(this)">GG</div><div class="sz" onclick="ss(this)">XGG</div></div>
+      </div>
+      <div>
+        <div class="flbl">Personalização (opcional)</div>
+        <div class="prow">
+          <div><div style="font-size:10px;color:var(--g5);margin-bottom:3px">Nome (máx. 15)</div><input class="finput" id="mnome" type="text" placeholder="RODRIGUES" maxlength="15"></div>
+          <div><div style="font-size:10px;color:var(--g5);margin-bottom:3px">Número</div><input class="finput" id="mnum" type="text" placeholder="10" maxlength="2"></div>
+        </div>
+      </div>
+      <button class="badd" onclick="addToCart()">🛒 ADICIONAR AO CARRINHO</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"><span class="tck">✔</span><span id="tmsg"></span></div>
+
+<script>
+/* ============================================================
+   CATÁLOGO COMPLETO — 130+ CAMISAS
+   6 LIGAS: Brasileirão, Premier League, La Liga, Serie A (ITA),
+            Bundesliga, Ligue 1 + Copa do Mundo 2026
+   
+   img: coloque o caminho da foto em fotos/camisas/LIGA/time.png
+   fallback: emoji exibido enquanto a foto não existe
+============================================================ */
+
+const LEAGUES = [
+  {
+    id:'brasileiros', name:'Brasileirão Série A 2026', flag:'🇧🇷',
+    teams:[
+      {b:'Flamengo',        n:'Camisa Flamengo I 2026',              d:'Flamengo · Lançamento 26/27 · tailandesa 1:1 ',                  p:120.00, o:160.00,   tag:'hot', cat:['brasileiros','masculinas'], rev:421, img:'fotos/camisas/brasileiros/flamengo.png',       fb:'🏆'},
+      {b:'Palmeiras',       n:'Camisa Verdão I 2026',                   d:'Puma · Série A · Dry-Fit premium',                 p:184.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:512, img:'fotos/camisas/brasileiros/palmeiras.png',      fb:'🟢'},
+      {b:'Botafogo',        n:'Camisa Glorioso I 2026',                 d:'Reebok · Vice-campeão · Patches CBF',              p:179.90, o:199.90, tag:'off', cat:['brasileiros','masculinas'], rev:287, img:'fotos/camisas/brasileiros/botafogo.png',       fb:'⭐'},
+      {b:'Corinthians',     n:'Camisa Fiel I 2026',                     d:'Nike · Parque São Jorge Edition',                  p:179.90, o:209.90, tag:'off', cat:['brasileiros','masculinas'], rev:389, img:'fotos/camisas/brasileiros/corinthians.png',    fb:'⚫'},
+      {b:'Fluminense',      n:'Camisa Tricolor Carioca I 2026',         d:'Umbro · Dry-Fit · Patches CBF',                   p:169.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:198, img:'fotos/camisas/brasileiros/fluminense.png',     fb:'🔴'},
+      {b:'São Paulo',       n:'Camisa Tricolor Paulista I 2026',        d:'New Balance · SPFC · Dry-Fit',                    p:174.90, o:194.90, tag:'off', cat:['brasileiros','masculinas'], rev:204, img:'fotos/camisas/brasileiros/sao-paulo.png',      fb:'🔺'},
+      {b:'Atlético MG',     n:'Camisa Galo I 2026',                     d:'Le Coq Sportif · Série A · Dry-Fit',              p:169.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:178, img:'fotos/camisas/brasileiros/atletico-mg.png',    fb:'🦅'},
+      {b:'Cruzeiro',        n:'Camisa Raposa Celeste I 2026',           d:'Umbro · Patches oficiais · Dry-Fit',              p:169.90, o:189.90, tag:'off', cat:['brasileiros','masculinas'], rev:93,  img:'fotos/camisas/brasileiros/cruzeiro.png',       fb:'💙'},
+      {b:'Grêmio',          n:'Camisa Tricolor Gaúcho I 2026',          d:'Umbro · Série A · Dry-Fit',                       p:164.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:155, img:'fotos/camisas/brasileiros/gremio.png',         fb:'🔵'},
+      {b:'Internacional',   n:'Camisa Colorado I 2026',                 d:'Adidas · Série A · Patches CBF',                  p:174.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:167, img:'fotos/camisas/brasileiros/internacional.png',  fb:'❤️'},
+      {b:'Vasco da Gama',   n:'Camisa Vasco I 2026',                    d:'Kappa · Série A · Dry-Fit',                       p:164.90, o:184.90, tag:'off', cat:['brasileiros','masculinas'], rev:147, img:'fotos/camisas/brasileiros/vasco.png',          fb:'⚔️'},
+      {b:'Bahia',           n:'Camisa Tricolor Baiano I 2026',          d:'Esquadro de Aço · Dry-Fit',                       p:159.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:88,  img:'fotos/camisas/brasileiros/bahia.png',          fb:'🔵'},
+      {b:'RB Bragantino',   n:'Camisa Massa Bruta I 2026',              d:'Castore · Série A · Dry-Fit',                     p:154.90, o:174.90, tag:'off', cat:['brasileiros','masculinas'], rev:61,  img:'fotos/camisas/brasileiros/rb-bragantino.png',  fb:'🔴'},
+      {b:'Santos',          n:'Camisa Peixe I 2026',                    d:'Umbro · Retorno à Série A · Dry-Fit',             p:164.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:213, img:'fotos/camisas/brasileiros/santos.png',         fb:'⚪'},
+      {b:'Mirassol',        n:'Camisa Leão da Mata I 2026',             d:'Penalty · Série A · Primeiro ano',                p:149.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:34,  img:'fotos/camisas/brasileiros/mirassol.png',       fb:'🦁'},
+      {b:'Ceará',           n:'Camisa Vozão I 2026 (promovido)',        d:'Penalty · Retorno · Dry-Fit',                     p:149.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:44,  img:'fotos/camisas/brasileiros/ceara.png',          fb:'⚫'},
+      {b:'Sport',           n:'Camisa Sport Recife I 2026 (promovido)', d:'Topper · Retorno à Série A',                      p:149.90, o:169.90, tag:'off', cat:['brasileiros','masculinas'], rev:38,  img:'fotos/camisas/brasileiros/sport.png',          fb:'🔴'},
+      {b:'Vitória',         n:'Camisa Rubro-Negro Baiano I 2026',       d:'Penalty · Série A · Dry-Fit',                     p:154.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:52,  img:'fotos/camisas/brasileiros/vitoria.png',        fb:'🔴'},
+      {b:'Fortaleza',       n:'Camisa Leão do Pici I 2026',             d:'Lobo Sport · Série A · Dry-Fit',                  p:154.90, o:174.90, tag:'off', cat:['brasileiros','masculinas'], rev:71,  img:'fotos/camisas/brasileiros/fortaleza.png',      fb:'🦁'},
+      {b:'Juventude',       n:'Camisa Ju I 2026',                       d:'Puma · Série A · Dry-Fit',                        p:149.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:29,  img:'fotos/camisas/brasileiros/juventude.png',      fb:'🟢'},
+    ]
+  },
+  {
+    id:'premier', name:'Premier League 2025/26', flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+    teams:[
+      {b:'Liverpool',       n:'Camisa Reds 25/26 — Home',               d:'Nike · Campeão 24/25 · Premier League',           p:229.90, o:null,   tag:'hot', cat:['premier','europeus','masculinas'], rev:312, img:'fotos/camisas/premier/liverpool.png',       fb:'🔴'},
+      {b:'Manchester City', n:'Camisa Citizens 25/26 — Home',           d:'Puma · Premier League · Dry-Fit',                 p:234.90, o:259.90, tag:'off', cat:['premier','europeus','masculinas'], rev:198, img:'fotos/camisas/premier/man-city.png',        fb:'🔵'},
+      {b:'Arsenal',         n:'Camisa Gunners 25/26 — Home',            d:'Adidas · Premier League · Patches',               p:224.90, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:267, img:'fotos/camisas/premier/arsenal.png',         fb:'🔴'},
+      {b:'Chelsea',         n:'Camisa Blues 25/26 — Home',              d:'Nike · Premier League · Slim Fit',                p:219.90, o:249.90, tag:'off', cat:['premier','europeus','masculinas'], rev:119, img:'fotos/camisas/premier/chelsea.png',         fb:'🔵'},
+      {b:'Manchester United',n:'Camisa Red Devils 25/26 — Home',        d:'Adidas · Premier League · Versão jogador',        p:224.90, o:259.90, tag:'off', cat:['premier','europeus','masculinas'], rev:214, img:'fotos/camisas/premier/man-united.png',      fb:'🔴'},
+      {b:'Newcastle United',n:'Camisa Magpies 25/26 — Home',           d:'Castore · Premier League · Patches',              p:209.90, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:78,  img:'fotos/camisas/premier/newcastle.png',       fb:'⚫'},
+      {b:'Tottenham',       n:'Camisa Spurs 25/26 — Home',              d:'Nike · Premier League · Dry-Fit',                 p:219.90, o:249.90, tag:'off', cat:['premier','europeus','masculinas'], rev:143, img:'fotos/camisas/premier/tottenham.png',       fb:'⚪'},
+      {b:'Aston Villa',     n:'Camisa Villa 25/26 — Home',              d:'Adidas · Premier League',                        p:204.90, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:67,  img:'fotos/camisas/premier/aston-villa.png',     fb:'🍷'},
+      {b:'Brighton',        n:'Camisa Seagulls 25/26 — Home',           d:'Nike · Premier League · Patches',                 p:199.90, o:219.90, tag:'off', cat:['premier','europeus','masculinas'], rev:54,  img:'fotos/camisas/premier/brighton.png',        fb:'🔵'},
+      {b:'Everton',         n:'Camisa Toffees 25/26 — Home',            d:'Hummel · Premier League',                        p:199.90, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:41,  img:'fotos/camisas/premier/everton.png',         fb:'🔵'},
+      {b:'West Ham',        n:'Camisa Hammers 25/26 — Home',            d:'Umbro · Premier League · Dry-Fit',               p:199.90, o:219.90, tag:'off', cat:['premier','europeus','masculinas'], rev:58,  img:'fotos/camisas/premier/west-ham.png',        fb:'🔨'},
+      {b:'Fulham',          n:'Camisa Cottagers 25/26 — Home',          d:'Adidas · Premier League',                        p:194.90, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:33,  img:'fotos/camisas/premier/fulham.png',          fb:'⚪'},
+      {b:'Wolverhampton',   n:'Camisa Wolves 25/26 — Home',             d:'Castore · Premier League',                       p:199.90, o:219.90, tag:'off', cat:['premier','europeus','masculinas'], rev:47,  img:'fotos/camisas/premier/wolves.png',          fb:'🟡'},
+      {b:'Crystal Palace',  n:'Camisa Eagles 25/26 — Home',             d:'Macron · Premier League',                        p:194.90, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:39,  img:'fotos/camisas/premier/crystal-palace.png',  fb:'🦅'},
+      {b:'Brentford',       n:'Camisa Bees 25/26 — Home',               d:'Umbro · Premier League',                         p:189.90, o:209.90, tag:'off', cat:['premier','europeus','masculinas'], rev:28,  img:'fotos/camisas/premier/brentford.png',       fb:'🐝'},
+      {b:'Nottm Forest',    n:'Camisa Forest 25/26 — Home',             d:'Adidas · Premier League',                        p:199.90, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:55,  img:'fotos/camisas/premier/nottm-forest.png',    fb:'🌲'},
+      {b:'Leicester City',  n:'Camisa Foxes 25/26 (promovido)',         d:'Adidas · Premier League · Retorno',              p:194.90, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:42,  img:'fotos/camisas/premier/leicester.png',       fb:'🦊'},
+      {b:'Leeds United',    n:'Camisa Leeds 25/26 (promovido)',         d:'Adidas · Premier League · Retorno',              p:199.90, o:219.90, tag:'off', cat:['premier','europeus','masculinas'], rev:76,  img:'fotos/camisas/premier/leeds.png',           fb:'⚪'},
+      {b:'Burnley',         n:'Camisa Clarets 25/26 (promovido)',       d:'Umbro · Premier League · Retorno',               p:189.90, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:31,  img:'fotos/camisas/premier/burnley.png',         fb:'🔴'},
+      {b:'Sunderland',      n:'Camisa Black Cats 25/26 (promovido)',    d:'Adidas · Premier League · Retorno',              p:189.90, o:209.90, tag:'off', cat:['premier','europeus','masculinas'], rev:44,  img:'fotos/camisas/premier/sunderland.png',      fb:'⚫'},
+    ]
+  },
+  {
+    id:'laliga', name:'La Liga 2025/26', flag:'🇪🇸',
+    teams:[
+      {b:'Barcelona',       n:'Camisa Blaugrana 25/26 — Home',          d:'Nike · La Liga · Campeão 24/25',                  p:239.90, o:null,   tag:'hot', cat:['laliga','europeus','masculinas'], rev:467, img:'fotos/camisas/laliga/barcelona.png',        fb:'🟠'},
+      {b:'Real Madrid',     n:'Camisa Los Blancos 25/26 — Home',        d:'Adidas Authentic · La Liga · Patches oficiais',   p:234.90, o:269.90, tag:'off', cat:['laliga','europeus','masculinas'], rev:398, img:'fotos/camisas/laliga/real-madrid.png',      fb:'⭐'},
+      {b:'Atlético Madrid', n:'Camisa Colchoneros 25/26 — Home',        d:'Nike · La Liga · Patches oficiais',               p:224.90, o:null,   tag:'novo',cat:['laliga','europeus','masculinas'], rev:187, img:'fotos/camisas/laliga/atletico-madrid.png',  fb:'🔴'},
+      {b:'Sevilla',         n:'Camisa Hispalense 25/26 — Home',         d:'Castore · La Liga · Dry-Fit',                     p:209.90, o:229.90, tag:'off', cat:['laliga','europeus','masculinas'], rev:88,  img:'fotos/camisas/laliga/sevilla.png',          fb:'⚪'},
+      {b:'Real Betis',      n:'Camisa Verdiblancos 25/26 — Home',       d:'Hummel · La Liga',                               p:204.90, o:null,   tag:'novo',cat:['laliga','europeus','masculinas'], rev:62,  img:'fotos/camisas/laliga/real-betis.png',       fb:'🟢'},
+      {b:'Real Sociedad',   n:'Camisa Txuri-Urdin 25/26 — Home',        d:'Macron · La Liga',                               p:199.90, o:219.90, tag:'off', cat:['laliga','europeus','masculinas'], rev:44,  img:'fotos/camisas/laliga/real-sociedad.png',    fb:'🔵'},
+      {b:'Villarreal',      n:'Camisa Submarine 25/26 — Home',          d:'Joma · La Liga · Dry-Fit',                       p:199.90, o:null,   tag:'novo',cat:['laliga','europeus','masculinas'], rev:56,  img:'fotos/camisas/laliga/villarreal.png',       fb:'🟡'},
+      {b:'Valencia',        n:'Camisa Che 25/26 — Home',                d:'Adidas · La Liga · Dry-Fit',                     p:204.90, o:229.90, tag:'off', cat:['laliga','europeus','masculinas'], rev:71,  img:'fotos/camisas/laliga/valencia.png',         fb:'🦇'},
+      {b:'Athletic Bilbao', n:'Camisa Leones 25/26 — Home',             d:'New Balance · La Liga · Patches',                p:209.90, o:null,   tag:'novo',cat:['laliga','europeus','masculinas'], rev:55,  img:'fotos/camisas/laliga/athletic-bilbao.png',  fb:'🔴'},
+      {b:'Celta Vigo',      n:'Camisa Celta 25/26 — Home',              d:'Adidas · La Liga',                               p:194.90, o:214.90, tag:'off', cat:['laliga','europeus','masculinas'], rev:33,  img:'fotos/camisas/laliga/celta-vigo.png',       fb:'🔵'},
+      {b:'Rayo Vallecano',  n:'Camisa Rayo 25/26 — Home',               d:'Kelme · La Liga',                                p:184.90, o:null,   tag:'novo',cat:['laliga','europeus','masculinas'], rev:27,  img:'fotos/camisas/laliga/rayo-vallecano.png',   fb:'⚪'},
+      {b:'Getafe',          n:'Camisa Getafe 25/26 — Home',             d:'Hummel · La Liga',                               p:184.90, o:199.90, tag:'off', cat:['laliga','europeus','masculinas'], rev:22,  img:'fotos/camisas/laliga/getafe.png',           fb:'🔵'},
+      {b:'Osasuna',         n:'Camisa Rojillos 25/26 — Home',           d:'Saeta · La Liga',                                p:184.90, o:null,   tag:'novo',cat:['laliga','europeus','masculinas'], rev:19,  img:'fotos/camisas/laliga/osasuna.png',          fb:'🔴'},
+      {b:'Girona',          n:'Camisa Gironès 25/26 — Home',            d:'Puma · La Liga',                                 p:194.90, o:214.90, tag:'off', cat:['laliga','europeus','masculinas'], rev:41,  img:'fotos/camisas/laliga/girona.png',           fb:'🔴'},
+      {b:'Espanyol',        n:'Camisa Periquitos 25/26 — Home',         d:'Puma · La Liga',                                 p:189.90, o:null,   tag:'novo',cat:['laliga','europeus','masculinas'], rev:34,  img:'fotos/camisas/laliga/espanyol.png',         fb:'⚪'},
+      {b:'Deportivo Alavés',n:'Camisa Babazorros 25/26 — Home',        d:'Adidas · La Liga',                               p:179.90, o:199.90, tag:'off', cat:['laliga','europeus','masculinas'], rev:15,  img:'fotos/camisas/laliga/alaves.png',           fb:'🔵'},
+      {b:'Leganés',         n:'Camisa Pepineros 25/26 — Home',          d:'Hummel · La Liga',                               p:179.90, o:null,   tag:'novo',cat:['laliga','europeus','masculinas'], rev:12,  img:'fotos/camisas/laliga/leganes.png',          fb:'⚪'},
+      {b:'Las Palmas',      n:'Camisa Chicharreros 25/26 — Home',       d:'Adidas · La Liga',                               p:179.90, o:194.90, tag:'off', cat:['laliga','europeus','masculinas'], rev:17,  img:'fotos/camisas/laliga/las-palmas.png',       fb:'🟡'},
+      {b:'Levante',         n:'Camisa Granotes 25/26 (promovido)',      d:'Kappa · La Liga · Retorno',                      p:184.90, o:null,   tag:'novo',cat:['laliga','europeus','masculinas'], rev:21,  img:'fotos/camisas/laliga/levante.png',          fb:'🔵'},
+      {b:'Valladolid',      n:'Camisa Pucela 25/26',                    d:'Kelme · La Liga',                                p:174.90, o:189.90, tag:'off', cat:['laliga','europeus','masculinas'], rev:14,  img:'fotos/camisas/laliga/valladolid.png',       fb:'🟣'},
+    ]
+  },
+  {
+    id:'seriea', name:'Serie A Italiana 2025/26', flag:'🇮🇹',
+    teams:[
+      {b:'Inter Milan',     n:'Camisa Nerazzurri 25/26 — Home',         d:'Nike · 1º na tabela 25/26 · Champions League',    p:234.90, o:null,   tag:'hot', cat:['seriea','europeus','masculinas'], rev:289, img:'fotos/camisas/seriea/inter-milan.png',      fb:'🔵'},
+      {b:'AC Milan',        n:'Camisa Rossoneri 25/26 — Home',          d:'Puma · 2º na tabela · Dry-Fit',                   p:229.90, o:259.90, tag:'off', cat:['seriea','europeus','masculinas'], rev:241, img:'fotos/camisas/seriea/ac-milan.png',         fb:'🔴'},
+      {b:'Napoli',          n:'Camisa Partenopei 25/26 — Home',         d:'Emporio Armani EA7 · Campeão 24/25',              p:229.90, o:null,   tag:'hot', cat:['seriea','europeus','masculinas'], rev:312, img:'fotos/camisas/seriea/napoli.png',           fb:'🔵'},
+      {b:'Juventus',        n:'Camisa Bianconeri 25/26 — Home',         d:'Adidas · Serie A · Classic Stripes',              p:224.90, o:249.90, tag:'off', cat:['seriea','europeus','masculinas'], rev:198, img:'fotos/camisas/seriea/juventus.png',         fb:'⬛'},
+      {b:'AS Roma',         n:'Camisa Giallorossi 25/26 — Home',        d:'Adidas · Serie A · Patches oficiais',             p:214.90, o:null,   tag:'novo',cat:['seriea','europeus','masculinas'], rev:144, img:'fotos/camisas/seriea/as-roma.png',          fb:'🐺'},
+      {b:'Como 1907',       n:'Camisa Como 25/26 — Home',               d:'New Balance · Serie A · 5º na tabela',            p:209.90, o:229.90, tag:'off', cat:['seriea','europeus','masculinas'], rev:67,  img:'fotos/camisas/seriea/como.png',             fb:'🔵'},
+      {b:'Atalanta',        n:'Camisa La Dea 25/26 — Home',             d:'Joma · Serie A · Champions League',               p:209.90, o:null,   tag:'novo',cat:['seriea','europeus','masculinas'], rev:88,  img:'fotos/camisas/seriea/atalanta.png',         fb:'⚫'},
+      {b:'Fiorentina',      n:'Camisa Viola 25/26 — Home',              d:'Kappa · Serie A · Edição especial',               p:209.90, o:229.90, tag:'off', cat:['seriea','europeus','masculinas'], rev:71,  img:'fotos/camisas/seriea/fiorentina.png',       fb:'💜'},
+      {b:'Lazio',           n:'Camisa Biancocelesti 25/26 — Home',      d:'Mizuno · Serie A · Dry-Fit',                      p:209.90, o:null,   tag:'novo',cat:['seriea','europeus','masculinas'], rev:79,  img:'fotos/camisas/seriea/lazio.png',            fb:'🔵'},
+      {b:'Bologna',         n:'Camisa Rossoblu 25/26 — Home',           d:'Adidas · Serie A · Champions League',             p:204.90, o:224.90, tag:'off', cat:['seriea','europeus','masculinas'], rev:44,  img:'fotos/camisas/seriea/bologna.png',          fb:'🔴'},
+      {b:'Torino',          n:'Camisa Granata 25/26 — Home',            d:'Joma · Serie A',                                  p:199.90, o:null,   tag:'novo',cat:['seriea','europeus','masculinas'], rev:37,  img:'fotos/camisas/seriea/torino.png',           fb:'🟤'},
+      {b:'Udinese',         n:'Camisa Bianconeri Friulani 25/26',       d:'Macron · Serie A',                                p:194.90, o:214.90, tag:'off', cat:['seriea','europeus','masculinas'], rev:27,  img:'fotos/camisas/seriea/udinese.png',          fb:'⚫'},
+      {b:'Cagliari',        n:'Camisa Isolani 25/26 — Home',            d:'Kelme · Serie A',                                 p:194.90, o:null,   tag:'novo',cat:['seriea','europeus','masculinas'], rev:22,  img:'fotos/camisas/seriea/cagliari.png',         fb:'🔴'},
+      {b:'Parma',           n:'Camisa Crociati 25/26 — Home',           d:'Errea · Serie A',                                 p:194.90, o:214.90, tag:'off', cat:['seriea','europeus','masculinas'], rev:18,  img:'fotos/camisas/seriea/parma.png',            fb:'🟡'},
+      {b:'Genoa',           n:'Camisa Grifone 25/26 — Home',            d:'Kappa · Serie A',                                 p:194.90, o:null,   tag:'novo',cat:['seriea','europeus','masculinas'], rev:23,  img:'fotos/camisas/seriea/genoa.png',            fb:'🔴'},
+      {b:'Hellas Verona',   n:'Camisa Gialloblù 25/26 — Home',          d:'Macron · Serie A',                                p:189.90, o:209.90, tag:'off', cat:['seriea','europeus','masculinas'], rev:16,  img:'fotos/camisas/seriea/verona.png',           fb:'🟡'},
+      {b:'Lecce',           n:'Camisa Giallorossi di Puglia 25/26',     d:'Erreà · Serie A',                                 p:184.90, o:null,   tag:'novo',cat:['seriea','europeus','masculinas'], rev:14,  img:'fotos/camisas/seriea/lecce.png',            fb:'🟡'},
+      {b:'Sassuolo',        n:'Camisa Neroverdi 25/26 (promovido)',     d:'Mapei · Retorno à Serie A',                       p:189.90, o:209.90, tag:'off', cat:['seriea','europeus','masculinas'], rev:29,  img:'fotos/camisas/seriea/sassuolo.png',         fb:'🟢'},
+      {b:'Pisa SC',         n:'Camisa Nerazzurri Toscani 25/26',        d:'Kelme · Primeira vez após 34 anos',               p:184.90, o:null,   tag:'novo',cat:['seriea','europeus','masculinas'], rev:11,  img:'fotos/camisas/seriea/pisa.png',             fb:'🔵'},
+      {b:'Cremonese',       n:'Camisa Grigiorossi 25/26 (promovido)',   d:'Macron · Retorno à Serie A',                      p:179.90, o:199.90, tag:'off', cat:['seriea','europeus','masculinas'], rev:8,   img:'fotos/camisas/seriea/cremonese.png',        fb:'⚫'},
+    ]
+  },
+  {
+    id:'bundesliga', name:'Bundesliga 2025/26', flag:'🇩🇪',
+    teams:[
+      {b:'Bayern München',  n:'Camisa Bayern 25/26 — Home',             d:'Adidas · Bundesliga · Champions League',          p:229.90, o:249.90, tag:'hot', cat:['bundesliga','europeus','masculinas'], rev:267, img:'fotos/camisas/bundesliga/bayern.png',       fb:'🔴'},
+      {b:'Bayer Leverkusen',n:'Camisa Werkself 25/26 — Home',           d:'Adidas · Bundesliga · Europa League',             p:219.90, o:null,   tag:'novo',cat:['bundesliga','europeus','masculinas'], rev:178, img:'fotos/camisas/bundesliga/leverkusen.png',   fb:'🔴'},
+      {b:'Borussia Dortmund',n:'Camisa BVB 25/26 — Home',              d:'Puma · Champions League · Dry-Fit',               p:224.90, o:254.90, tag:'off', cat:['bundesliga','europeus','masculinas'], rev:231, img:'fotos/camisas/bundesliga/dortmund.png',     fb:'🟡'},
+      {b:'RB Leipzig',      n:'Camisa Die Roten Bullen 25/26',          d:'Nike · Bundesliga · Champions League',            p:214.90, o:null,   tag:'novo',cat:['bundesliga','europeus','masculinas'], rev:112, img:'fotos/camisas/bundesliga/rb-leipzig.png',   fb:'🔴'},
+      {b:'Eintracht Frankfurt',n:'Camisa Adler 25/26 — Home',          d:'Nike · Bundesliga · Europa League',               p:209.90, o:229.90, tag:'off', cat:['bundesliga','europeus','masculinas'], rev:77,  img:'fotos/camisas/bundesliga/frankfurt.png',    fb:'⚫'},
+      {b:'Borussia M\'gladbach',n:'Camisa Fohlen 25/26 — Home',        d:'Puma · Bundesliga',                               p:204.90, o:null,   tag:'novo',cat:['bundesliga','europeus','masculinas'], rev:55,  img:'fotos/camisas/bundesliga/mgladbach.png',    fb:'⚫'},
+      {b:'VfB Stuttgart',   n:'Camisa Schwaben 25/26 — Home',           d:'Jako · Bundesliga · Champions League',            p:209.90, o:229.90, tag:'off', cat:['bundesliga','europeus','masculinas'], rev:66,  img:'fotos/camisas/bundesliga/stuttgart.png',    fb:'🔴'},
+      {b:'Werder Bremen',   n:'Camisa Werder 25/26 — Home',             d:'Nike · Bundesliga',                               p:204.90, o:null,   tag:'novo',cat:['bundesliga','europeus','masculinas'], rev:44,  img:'fotos/camisas/bundesliga/werder.png',       fb:'🟢'},
+      {b:'TSG Hoffenheim',  n:'Camisa Kraichgauer 25/26 — Home',        d:'Jako · Bundesliga',                               p:199.90, o:219.90, tag:'off', cat:['bundesliga','europeus','masculinas'], rev:31,  img:'fotos/camisas/bundesliga/hoffenheim.png',   fb:'🔵'},
+      {b:'SC Freiburg',     n:'Camisa Sport-Club 25/26 — Home',         d:'EuroSport · Bundesliga',                          p:194.90, o:null,   tag:'novo',cat:['bundesliga','europeus','masculinas'], rev:27,  img:'fotos/camisas/bundesliga/freiburg.png',     fb:'🔴'},
+      {b:'FC Augsburg',     n:'Camisa Fuggerstädter 25/26 — Home',      d:'Puma · Bundesliga',                               p:189.90, o:209.90, tag:'off', cat:['bundesliga','europeus','masculinas'], rev:19,  img:'fotos/camisas/bundesliga/augsburg.png',     fb:'🔴'},
+      {b:'VfL Wolfsburg',   n:'Camisa Wölfe 25/26 — Home',              d:'Nike · Bundesliga',                               p:199.90, o:null,   tag:'novo',cat:['bundesliga','europeus','masculinas'], rev:38,  img:'fotos/camisas/bundesliga/wolfsburg.png',    fb:'🟢'},
+      {b:'Mainz 05',        n:'Camisa Mainz 25/26 — Home',              d:'Kappa · Bundesliga',                              p:189.90, o:209.90, tag:'off', cat:['bundesliga','europeus','masculinas'], rev:22,  img:'fotos/camisas/bundesliga/mainz.png',        fb:'🔴'},
+      {b:'FC Union Berlin', n:'Camisa Eiserne 25/26 — Home',            d:'Adidas · Bundesliga',                             p:194.90, o:null,   tag:'novo',cat:['bundesliga','europeus','masculinas'], rev:33,  img:'fotos/camisas/bundesliga/union-berlin.png', fb:'🔴'},
+      {b:'FC St. Pauli',    n:'Camisa Kiezkicker 25/26 — Home',         d:'Hummel · Bundesliga',                             p:194.90, o:214.90, tag:'off', cat:['bundesliga','europeus','masculinas'], rev:28,  img:'fotos/camisas/bundesliga/st-pauli.png',     fb:'💀'},
+      {b:'Holstein Kiel',   n:'Camisa Störche 25/26 — Home',            d:'Puma · Bundesliga',                               p:184.90, o:null,   tag:'novo',cat:['bundesliga','europeus','masculinas'], rev:11,  img:'fotos/camisas/bundesliga/holstein-kiel.png',fb:'🔵'},
+      {b:'Heidenheim',      n:'Camisa FCH 25/26 — Home',                d:'Jako · Bundesliga',                               p:179.90, o:199.90, tag:'off', cat:['bundesliga','europeus','masculinas'], rev:9,   img:'fotos/camisas/bundesliga/heidenheim.png',   fb:'🔴'},
+      {b:'Hamburger SV',    n:'Camisa Rothosen 25/26 (promovido)',      d:'Adidas · Retorno após 7 anos',                    p:199.90, o:null,   tag:'novo',cat:['bundesliga','europeus','masculinas'], rev:44,  img:'fotos/camisas/bundesliga/hamburger-sv.png', fb:'🔴'},
+    ]
+  },
+  {
+    id:'ligue1', name:'Ligue 1 2025/26', flag:'🇫🇷',
+    teams:[
+      {b:'Paris Saint-Germain',n:'Camisa PSG 25/26 — Home',            d:'Nike · Campeão · 13º título consecutivo',         p:239.90, o:null,   tag:'hot', cat:['ligue1','europeus','masculinas'], rev:389, img:'fotos/camisas/ligue1/psg.png',              fb:'🗼'},
+      {b:'Olympique Marseille',n:'Camisa OM 25/26 — Home',             d:'Puma · Ligue 1 · 2º colocado',                   p:214.90, o:234.90, tag:'off', cat:['ligue1','europeus','masculinas'], rev:177, img:'fotos/camisas/ligue1/marseille.png',        fb:'🔵'},
+      {b:'AS Monaco',       n:'Camisa Monegasques 25/26 — Home',        d:'Kappa · Ligue 1 · Champions League',             p:209.90, o:null,   tag:'novo',cat:['ligue1','europeus','masculinas'], rev:121, img:'fotos/camisas/ligue1/monaco.png',           fb:'🔴'},
+      {b:'Olympique Lyon',  n:'Camisa OL 25/26 — Home',                 d:'Adidas · Ligue 1',                               p:209.90, o:229.90, tag:'off', cat:['ligue1','europeus','masculinas'], rev:144, img:'fotos/camisas/ligue1/lyon.png',             fb:'🔴'},
+      {b:'LOSC Lille',      n:'Camisa Dogues 25/26 — Home',             d:'New Balance · Ligue 1 · Champions League',       p:204.90, o:null,   tag:'novo',cat:['ligue1','europeus','masculinas'], rev:88,  img:'fotos/camisas/ligue1/lille.png',            fb:'🔴'},
+      {b:'Stade Rennes',    n:'Camisa Rouge et Noir 25/26 — Home',      d:'Le Coq Sportif · Ligue 1',                       p:199.90, o:219.90, tag:'off', cat:['ligue1','europeus','masculinas'], rev:55,  img:'fotos/camisas/ligue1/rennes.png',           fb:'🔴'},
+      {b:'RC Lens',         n:'Camisa Sang et Or 25/26 — Home',         d:'New Balance · Ligue 1',                          p:199.90, o:null,   tag:'novo',cat:['ligue1','europeus','masculinas'], rev:44,  img:'fotos/camisas/ligue1/lens.png',             fb:'🟡'},
+      {b:'Nice',            n:'Camisa Aiglons 25/26 — Home',            d:'Macron · Ligue 1 · Europa League',              p:199.90, o:219.90, tag:'off', cat:['ligue1','europeus','masculinas'], rev:38,  img:'fotos/camisas/ligue1/nice.png',             fb:'🔴'},
+      {b:'Stade Brestois',  n:'Camisa Brest 25/26 — Home',              d:'Kappa · Ligue 1 · Champions League',            p:194.90, o:null,   tag:'novo',cat:['ligue1','europeus','masculinas'], rev:31,  img:'fotos/camisas/ligue1/brest.png',            fb:'🔴'},
+      {b:'Strasbourg',      n:'Camisa Racing Club 25/26 — Home',        d:'Adidas · Ligue 1',                               p:189.90, o:209.90, tag:'off', cat:['ligue1','europeus','masculinas'], rev:22,  img:'fotos/camisas/ligue1/strasbourg.png',       fb:'🔵'},
+      {b:'Toulouse FC',     n:'Camisa Violets 25/26 — Home',            d:'Under Armour · Ligue 1',                         p:189.90, o:null,   tag:'novo',cat:['ligue1','europeus','masculinas'], rev:18,  img:'fotos/camisas/ligue1/toulouse.png',         fb:'🟣'},
+      {b:'Montpellier',     n:'Camisa Paillade 25/26 — Home',           d:'Puma · Ligue 1',                                 p:184.90, o:204.90, tag:'off', cat:['ligue1','europeus','masculinas'], rev:14,  img:'fotos/camisas/ligue1/montpellier.png',      fb:'🔵'},
+      {b:'Nantes',          n:'Camisa Canaris 25/26 — Home',            d:'Kappa · Ligue 1',                                p:184.90, o:null,   tag:'novo',cat:['ligue1','europeus','masculinas'], rev:19,  img:'fotos/camisas/ligue1/nantes.png',           fb:'🟡'},
+      {b:'Auxerre',         n:'Camisa AJA 25/26 — Home',                d:'Hummel · Ligue 1',                               p:179.90, o:199.90, tag:'off', cat:['ligue1','europeus','masculinas'], rev:12,  img:'fotos/camisas/ligue1/auxerre.png',          fb:'⚪'},
+      {b:'Reims',           n:'Camisa Rouges et Blancs 25/26',          d:'Adidas · Ligue 1',                               p:179.90, o:null,   tag:'novo',cat:['ligue1','europeus','masculinas'], rev:11,  img:'fotos/camisas/ligue1/reims.png',            fb:'🔴'},
+      {b:'Le Havre',        n:'Camisa HAC 25/26 — Home',                d:'Macron · Ligue 1',                               p:174.90, o:194.90, tag:'off', cat:['ligue1','europeus','masculinas'], rev:8,   img:'fotos/camisas/ligue1/le-havre.png',         fb:'🔵'},
+      {b:'Saint-Étienne',   n:'Camisa Les Verts 25/26 — Home',          d:'Le Coq Sportif · Ligue 1',                       p:179.90, o:null,   tag:'novo',cat:['ligue1','europeus','masculinas'], rev:22,  img:'fotos/camisas/ligue1/saint-etienne.png',    fb:'🟢'},
+      {b:'Angers SCO',      n:'Camisa Angers 25/26 — Home',             d:'Hummel · Ligue 1',                               p:174.90, o:189.90, tag:'off', cat:['ligue1','europeus','masculinas'], rev:7,   img:'fotos/camisas/ligue1/angers.png',           fb:'⚪'},
+    ]
+  },
+  {
+    id:'copa', name:'Copa do Mundo 2026', flag:'🏆',
+    teams:[
+      {b:'Brasil',          n:'Camisa Seleção Copa 2026',               d:'Nike · Edição Copa do Mundo · Patches FIFA',     p:249.90, o:null,   tag:'copa',cat:['copa','masculinas'], rev:503, img:'fotos/camisas/copa/brasil.png',      fb:'🌟'},
+      {b:'Argentina',       n:'Camisa Albiceleste Copa 2026',           d:'Adidas · Tricampeã 2022 · Copa 2026',            p:244.90, o:null,   tag:'copa',cat:['copa','masculinas'], rev:672, img:'fotos/camisas/copa/argentina.png',   fb:'🇦🇷'},
+      {b:'França',          n:'Camisa Les Bleus Copa 2026',             d:'Nike · Campeão 2018 · Edição especial',          p:244.90, o:264.90, tag:'off', cat:['copa','masculinas'], rev:288, img:'fotos/camisas/copa/franca.png',      fb:'🇫🇷'},
+      {b:'Alemanha',        n:'Camisa Die Mannschaft Copa 2026',        d:'Adidas · DFB · Edição Copa',                     p:239.90, o:null,   tag:'copa',cat:['copa','masculinas'], rev:177, img:'fotos/camisas/copa/alemanha.png',    fb:'🇩🇪'},
+      {b:'Portugal',        n:'Camisa Lusitanos Copa 2026',             d:'Nike · FPF · Dry-Fit · Patches FIFA',            p:239.90, o:259.90, tag:'off', cat:['copa','masculinas'], rev:221, img:'fotos/camisas/copa/portugal.png',    fb:'🇵🇹'},
+      {b:'Inglaterra',      n:'Camisa Three Lions Copa 2026',           d:'Nike · FA · Copa do Mundo',                     p:239.90, o:null,   tag:'copa',cat:['copa','masculinas'], rev:198, img:'fotos/camisas/copa/inglaterra.png',  fb:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},
+      {b:'Espanha',         n:'Camisa La Roja Copa 2026',               d:'Adidas · Campeã Euro 2024 · Copa 2026',         p:239.90, o:259.90, tag:'off', cat:['copa','masculinas'], rev:244, img:'fotos/camisas/copa/espanha.png',     fb:'🇪🇸'},
+      {b:'Holanda',         n:'Camisa Oranje Copa 2026',                d:'Nike · KNVB · Edição Copa do Mundo',            p:239.90, o:null,   tag:'copa',cat:['copa','masculinas'], rev:167, img:'fotos/camisas/copa/holanda.png',     fb:'🇳🇱'},
+      {b:'Itália',          n:'Camisa Azzurri Copa 2026',               d:'Adidas · FIGC · Edição Copa do Mundo',          p:239.90, o:259.90, tag:'off', cat:['copa','masculinas'], rev:143, img:'fotos/camisas/copa/italia.png',      fb:'🇮🇹'},
+      {b:'Bélgica',         n:'Camisa Diables Rouges Copa 2026',        d:'Adidas · RBFA · Edição Copa',                   p:234.90, o:null,   tag:'copa',cat:['copa','masculinas'], rev:122, img:'fotos/camisas/copa/belgica.png',     fb:'🇧🇪'},
+      {b:'Uruguai',         n:'Camisa Celeste Copa 2026',               d:'Puma · AUF · Edição Copa do Mundo',             p:229.90, o:249.90, tag:'off', cat:['copa','masculinas'], rev:87,  img:'fotos/camisas/copa/uruguai.png',     fb:'🇺🇾'},
+      {b:'México',          n:'Camisa Tri Copa 2026 (sede)',            d:'Adidas · FMF · País sede Copa 2026',            p:234.90, o:null,   tag:'copa',cat:['copa','masculinas'], rev:133, img:'fotos/camisas/copa/mexico.png',      fb:'🇲🇽'},
+      {b:'USA',             n:'Camisa Stars & Stripes Copa 2026 (sede)',d:'Nike · USSF · País sede Copa 2026',             p:234.90, o:254.90, tag:'off', cat:['copa','masculinas'], rev:108, img:'fotos/camisas/copa/usa.png',         fb:'🇺🇸'},
+      {b:'Canadá',          n:'Camisa Les Rouges Copa 2026 (sede)',     d:'Nike · Canadá Futebol · País sede',             p:229.90, o:null,   tag:'copa',cat:['copa','masculinas'], rev:76,  img:'fotos/camisas/copa/canada.png',      fb:'🇨🇦'},
+      {b:'Japão',           n:'Camisa Samurai Blue Copa 2026',          d:'Adidas · JFA · Edição Copa do Mundo',           p:229.90, o:249.90, tag:'off', cat:['copa','masculinas'], rev:94,  img:'fotos/camisas/copa/japao.png',       fb:'🇯🇵'},
+    ]
+  }
+];
+
+// Flat products list
+const P = [];
+let idC = 1;
+LEAGUES.forEach(lg => {
+  lg.teams.forEach(t => {
+    P.push({...t, id:idC++, league:lg.id});
+  });
+});
+
+const TL={hot:'🔥 +Vendida',off:'% OFF',copa:'Copa 2026',novo:'Novo'};
+const TC={hot:'bn',off:'bo',copa:'bc',novo:'bn'};
+let cart=[],amp=null,sl=0,currentFilter='all';
+
+function toSlug(text){
+  return text.toString().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+}
+
+/* ─── BUILD DROPDOWNS ─── */
+function buildDrops(){
+  const map={brasileiros:'drop-br',premier:'drop-pl',laliga:'drop-ll',seriea:'drop-sa',bundesliga:'drop-bl',ligue1:'drop-l1',copa:'drop-copa'};
+  LEAGUES.forEach(lg=>{
+    const el=document.getElementById(map[lg.id]);
+    if(!el)return;
+    el.innerHTML=`<a href="#league/${lg.id}" onclick="fc('${lg.id}');return false">Ver todos ${lg.name}</a>`
+      +lg.teams.slice(0,10).map(t=>`<a href="#team/${toSlug(t.b)}" onclick="fcTeam('${t.b}');return false">${t.b}</a>`).join('')
+      +(lg.teams.length>10?`<a href="#league/${lg.id}" onclick="fc('${lg.id}');return false">Ver mais ${lg.teams.length-10}+ times →</a>`:'');
+  });
+}
+buildDrops();
+
+/* ─── PRODUCT CARD HTML ─── */
+function cardHtml(p){
+  const inst=(p.p/12).toFixed(2).replace('.',',');
+  const disc=p.o?Math.round((1-p.p/p.o)*100):null;
+  return`<div class="pcard" onclick="om(${p.id})">
+    ${p.tag?`<div class="cbadge2 ${TC[p.tag]}">${TL[p.tag]}</div>`:''}
+    <button class="cwish" onclick="event.stopPropagation();st('${p.b} adicionado à lista ❤️')">♡</button>
+    <div class="cimg">
+      <img src="${p.img}" alt="Camisa ${p.b}" loading="lazy"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="ph" style="display:none">
+        <span class="ph-icon">${p.fb}</span>
+        <span class="ph-txt">Foto em breve</span>
+      </div>
+    </div>
+    <div class="cbody">
+      <div class="cbrand">${p.b}</div>
+      <div class="cname">${p.n}</div>
+      <div class="crat"><span class="stars">★★★★★</span><span class="rcnt">(${p.rev})</span></div>
+      <div>
+        ${p.o?`<div class="cpold">R$ ${p.o.toFixed(2).replace('.',',')}</div>`:''}
+        <div style="display:flex;align-items:baseline">
+          <div class="cprice">R$ ${p.p.toFixed(2).replace('.',',')}</div>
+          ${disc?`<span class="cdisc">-${disc}%</span>`:''}
+        </div>
+        <div class="cpinst">12x R$ ${inst} sem juros</div>
+      </div>
+      <button class="cadd" onclick="event.stopPropagation();qa(${p.id})">🛒 COMPRAR</button>
+    </div>
+  </div>`;
+}
+
+/* ─── RENDER ALL LEAGUES ─── */
+function renderAll(filter='all'){
+  const wrap=document.getElementById('sec-all');
+  let html='';
+  let totalShown=0;
+
+  const leagueFilters = ['brasileiros','premier','laliga','seriea','bundesliga','ligue1','copa'];
+  const categoryFilters = ['femininas','masculinas','sale'];
+  const relevantLeagues = filter==='all' ? LEAGUES :
+    leagueFilters.includes(filter) ? LEAGUES.filter(l=>l.id===filter) :
+    categoryFilters.includes(filter) ? LEAGUES :
+    LEAGUES.filter(l=>l.id===filter);
+
+  relevantLeagues.forEach(lg=>{
+    const items =
+      filter==='all' ? lg.teams.map(t=>P.find(p=>p.b===t.b&&p.league===lg.id)) :
+      filter==='sale' ? P.filter(p=>p.league===lg.id&&p.tag==='off') :
+      filter==='femininas' ? P.filter(p=>p.league===lg.id&&p.cat.includes('femininas')) :
+      filter==='masculinas' ? P.filter(p=>p.league===lg.id&&p.cat.includes('masculinas')) :
+      leagueFilters.includes(filter) ? P.filter(p=>p.league===lg.id) :
+      P.filter(p=>p.league===lg.id&&p.cat.includes(filter));
+
+    const show = filter==='all' ? items.slice(0,5) :
+      items.filter(Boolean).slice(0, items.length <= 5 ? items.length : 10);
+
+    if(!show.length||show.filter(Boolean).length===0)return;
+    totalShown+=show.filter(Boolean).length;
+
+    html+=`<div class="league-sec">
+      <div class="league-header" onclick="toggleLeague(this)">
+        <span class="league-flag">${lg.flag}</span>
+        <span class="league-name">${lg.name}</span>
+        <span class="league-count">${show.filter(Boolean).length} camisas</span>
+        <span class="league-toggle">▼</span>
+      </div>
+      <div class="pgrid">
+        ${show.filter(Boolean).map(p=>cardHtml(p)).join('')}
+      </div>
+    </div>`;
+  });
+
+  wrap.innerHTML=html||'<div style="text-align:center;padding:60px;color:var(--g5);font-size:15px">Nenhuma camisa encontrada para este filtro.</div>';
+
+  // results bar
+  const rb=document.getElementById('results-bar');
+  if(filter==='all'){rb.style.display='none';}
+  else{rb.style.display='flex';document.getElementById('results-count').textContent=totalShown;}
+}
+
+function toggleLeague(header){
+  const grid=header.nextElementSibling;
+  const tog=header.querySelector('.league-toggle');
+  grid.classList.toggle('hidden');
+  tog.textContent=grid.classList.contains('hidden')?'▶':'▼';
+}
+
+renderAll('all');
+
+/* ─── FILTER ─── */
+function fc(cat){
+  currentFilter=cat;
+  document.querySelectorAll('.cpill').forEach(p=>p.classList.remove('active'));
+  const activePill=document.querySelector(`.cpill[onclick*="'${cat}'"]`);
+  if(activePill)activePill.classList.add('active');
+  renderAll(cat);
+  window.location.hash = `league/${cat}`;
+  document.getElementById('sec-all').scrollIntoView({behavior:'smooth'});
+}
+
+function fcTeam(name){
+  const wrap=document.getElementById('sec-all');
+  const item=P.find(p=>p.b===name);
+  if(!item)return;
+  wrap.innerHTML=`<div class="league-sec">
+    <div class="league-header" onclick="toggleLeague(this)">
+      <span class="league-flag">🔍</span>
+      <span class="league-name">${name}</span>
+      <span class="league-count">1 camisa</span>
+      <span class="league-toggle">▼</span>
+    </div>
+    <div class="pgrid">${cardHtml(item)}</div>
+  </div>`;
+  const rb=document.getElementById('results-bar');
+  rb.style.display='flex';document.getElementById('results-count').textContent=1;
+  window.location.hash = `team/${toSlug(name)}`;
+  document.getElementById('sec-all').scrollIntoView({behavior:'smooth'});
+}
+
+function clearFilter(){
+  currentFilter='all';
+  document.querySelectorAll('.cpill').forEach(p=>p.classList.remove('active'));
+  document.querySelector('.cpill').classList.add('active');
+  renderAll('all');
+  window.location.hash = 'league/all';
+  document.getElementById('results-bar').style.display='none';
+}
+
+function sp2(el,cat){
+  document.querySelectorAll('.cpill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  fc(cat);
+}
+
+function applyHash(){
+  const h=window.location.hash.replace(/^#/,'');
+  if(!h||h==='league/all'){clearFilter();return;}
+  if(h.startsWith('league/')){
+    const cat=h.split('/')[1];
+    const valid=cat==='all'||LEAGUES.some(l=>l.id===cat)||['femininas','masculinas','sale','copa'].includes(cat);
+    if(valid){fc(cat);return;}
+  }
+  if(h.startsWith('team/')){
+    const slug=h.split('/')[1];
+    const found=P.find(p=>toSlug(p.b)===slug);
+    if(found){fcTeam(found.b);return;}
+  }
+}
+
+window.addEventListener('hashchange',applyHash);
+window.addEventListener('load',applyHash);
+
+/* ─── SEARCH ─── */
+function doSearch(){
+  const q=document.getElementById('srch').value.trim().toLowerCase();
+  if(!q)return;
+  const found=P.filter(p=>p.b.toLowerCase().includes(q)||p.n.toLowerCase().includes(q)||p.d.toLowerCase().includes(q));
+  const wrap=document.getElementById('sec-all');
+  if(!found.length){wrap.innerHTML='<div style="text-align:center;padding:60px;color:var(--g5);font-size:15px">Nenhuma camisa encontrada para "'+q+'"</div>';return;}
+  wrap.innerHTML=`<div class="league-sec">
+    <div class="league-header" onclick="toggleLeague(this)">
+      <span class="league-flag">🔍</span>
+      <span class="league-name">Resultados para "${q}"</span>
+      <span class="league-count">${found.length} ${found.length===1?'camisa':'camisas'}</span>
+      <span class="league-toggle">▼</span>
+    </div>
+    <div class="pgrid">${found.map(p=>cardHtml(p)).join('')}</div>
+  </div>`;
+  const rb=document.getElementById('results-bar');
+  rb.style.display='flex';document.getElementById('results-count').textContent=found.length;
+  document.getElementById('sec-all').scrollIntoView({behavior:'smooth'});
+}
+document.getElementById('srch').addEventListener('keydown',e=>{if(e.key==='Enter')doSearch();});
+
+/* ─── MODAL ─── */
+function om(id){
+  const p=P.find(x=>x.id===id);if(!p)return;amp=p;
+  const img=document.getElementById('mimg'),ph=document.getElementById('mph');
+  img.src=p.img;img.alt='Camisa '+p.b;img.style.display='block';ph.style.display='none';
+  img.onerror=()=>{img.style.display='none';ph.style.display='block';ph.textContent=p.fb;};
+  document.getElementById('mbrand').textContent=p.b;
+  document.getElementById('mname').textContent=p.n;
+  document.getElementById('mdesc').textContent=p.d+'. Material Dry-Fit de alta tecnologia. Personalize com nome e número.';
+  document.getElementById('mpmain').textContent='R$ '+p.p.toFixed(2).replace('.',',');
+  document.getElementById('mpold').innerHTML=p.o?`<div class="mpold">De: R$ ${p.o.toFixed(2).replace('.',',')}</div>`:'';
+  const disc=p.o?Math.round((1-p.p/p.o)*100):null;
+  document.getElementById('mdisc').innerHTML=disc?`<span class="mdisc">-${disc}%</span>`:'';
+  document.getElementById('mpinst').textContent='ou 12x de R$ '+(p.p/12).toFixed(2).replace('.',',')+' sem juros';
+  document.getElementById('mbadge').innerHTML=p.tag?`<div class="cbadge2 ${TC[p.tag]}">${TL[p.tag]}</div>`:'';
+  document.getElementById('mrev').textContent='4.9 ('+p.rev+' avaliações)';
+  document.getElementById('mnome').value='';document.getElementById('mnum').value='';
+  document.querySelectorAll('.sz').forEach((s,i)=>s.classList.toggle('sel',i===1));
+  document.getElementById('mbg').classList.add('open');document.body.style.overflow='hidden';
+}
+function closeModal(){document.getElementById('mbg').classList.remove('open');document.body.style.overflow='';}
+function ss(el){document.querySelectorAll('.sz').forEach(s=>s.classList.remove('sel'));el.classList.add('sel');}
+
+/* ─── CART ─── */
+function addToCart(){
+  if(!amp)return;
+  const size=document.querySelector('.sz.sel')?.textContent||'M';
+  const nome=document.getElementById('mnome').value.trim();
+  const num=document.getElementById('mnum').value.trim();
+  pc(amp,size,nome,num);closeModal();st(amp.b+' adicionada ao carrinho! 🛒');
+}
+function qa(id){const p=P.find(x=>x.id===id);if(!p)return;pc(p,'M','','');st(p.b+' adicionada! 🛒');}
+function pc(p,size,nome,num){
+  const ex=cart.find(c=>c.id===p.id&&c.size===size&&c.nome===nome&&c.num===num);
+  if(ex)ex.qty++;else cart.push({...p,size,nome,num,qty:1});
+  ub();rd();
+}
+function ub(){document.getElementById('cbadge').textContent=cart.reduce((s,c)=>s+c.qty,0);}
+function rd(){
+  const li=document.getElementById('ditems'),df=document.getElementById('dfooter');
+  if(!cart.length){li.innerHTML='<div class="dempty"><div class="dei">🛒</div><div class="det">Seu carrinho está vazio</div><div class="des">Adicione produtos para continuar</div></div>';df.innerHTML='';return;}
+  li.innerHTML=cart.map((c,i)=>`<div class="cicard">
+    <div class="ciimg">
+      <img src="${c.img}" alt="${c.b}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" style="width:100%;height:100%;object-fit:contain;padding:4px">
+      <span class="ci-ph" style="display:none">${c.fb}</span>
+    </div>
+    <div>
+      <div class="cibrand">${c.b}</div>
+      <div class="ciname">${c.n}</div>
+      <div class="cidet">Tam: ${c.size}${c.nome?' · '+c.nome+' #'+c.num:''}</div>
+      <div class="ciqty">
+        <button class="qctrl" onclick="cq(${i},-1)">−</button>
+        <span class="qn">${c.qty}</span>
+        <button class="qctrl" onclick="cq(${i},1)">+</button>
+      </div>
+    </div>
+    <div>
+      <div class="ciprice">R$ ${(c.p*c.qty).toFixed(2).replace('.',',')}</div>
+      <span class="cirm" onclick="ri(${i})">🗑 Remover</span>
+    </div>
+  </div>`).join('');
+  const sub=cart.reduce((s,c)=>s+c.p*c.qty,0),frete=sub>=199?0:19.90,total=sub+frete,qt=cart.reduce((s,c)=>s+c.qty,0);
+  df.innerHTML=`<div class="dfooter">
+    <div class="dtr"><span>Subtotal (${qt} itens)</span><span>R$ ${sub.toFixed(2).replace('.',',')}</span></div>
+    <div class="dtr ${frete===0?'fg':''}"><span>Frete</span><span>${frete===0?'🎁 GRÁTIS':'R$ '+frete.toFixed(2).replace('.',',')}</span></div>
+    <div class="dtr main"><span>Total</span><span>R$ ${total.toFixed(2).replace('.',',')}</span></div>
+    <div style="margin-top:11px">
+      <button class="bwpp" onclick="wpp()">💬 FINALIZAR VIA WHATSAPP</button>
+      <button class="bcont" onclick="closeCart()">← Continuar Comprando</button>
+    </div></div>`;
+}
+function cq(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);ub();rd();}
+function ri(i){cart.splice(i,1);ub();rd();}
+function wpp(){
+  if(!cart.length)return;
+  const lines=cart.map(c=>`• ${c.b} — ${c.n}\n  Tam: ${c.size}${c.nome?' · '+c.nome+' #'+c.num:''} | Qtd: ${c.qty} | R$ ${(c.p*c.qty).toFixed(2).replace('.',',')}`);
+  const total=cart.reduce((s,c)=>s+c.p*c.qty,0);
+  window.open('https://wa.me/5532999909127?text='+encodeURIComponent(`Olá! Pedido Next Mantos 👕⚽\n\n${lines.join('\n\n')}\n\n*Total: R$ ${total.toFixed(2).replace('.',',')}*\n\nAguardo confirmação!`),'_blank');
+}
+function openCart(){rd();document.getElementById('cdrawer').classList.add('open');document.getElementById('doverlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeCart(){document.getElementById('cdrawer').classList.remove('open');document.getElementById('doverlay').classList.remove('open');document.body.style.overflow='';}
+
+let tt;
+function st(msg){const t=document.getElementById('toast');document.getElementById('tmsg').textContent=msg;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),3000);}
+
+function gs(n){document.querySelectorAll('.bslide').forEach((s,i)=>s.classList.toggle('active',i===n));document.querySelectorAll('.bdot').forEach((d,i)=>d.classList.toggle('active',i===n));sl=n;}
+function sn(){gs((sl+1)%3);}function sp(){gs((sl+2)%3);}
+setInterval(sn,5000);
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeCart();}});
+</script>
+</body>
+</html>
