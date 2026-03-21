@@ -58,7 +58,7 @@ nav{background:var(--blue)}
 .ni-item:hover .ndrop{display:block}
 .ndrop a{display:block;padding:9px 16px;font-size:13px;color:var(--g8);border-bottom:1px solid var(--g2);transition:all .15s}
 .ndrop a:hover{background:var(--blue-light);color:var(--blue);padding-left:20px}
-.ndrop a:last-child{border-bottom:none}
+.ndrop.open{display:block !important}
 
 .pstrip{background:linear-gradient(90deg,#1a1a2e,#0f3460);color:#fff;text-align:center;padding:9px 20px;font-size:13px;font-weight:500}
 .pstrip strong{color:var(--gold)}
@@ -258,6 +258,10 @@ footer{background:var(--g9);color:rgba(255,255,255,.65);padding:40px 0 20px}
 .mgal{background:var(--g1);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;border-radius:6px 0 0 6px;overflow:hidden}
 .mgal img{width:100%;height:100%;object-fit:contain;padding:22px;max-height:360px}
 .mgal .mgal-ph{font-size:110px;filter:drop-shadow(0 12px 24px rgba(0,0,0,.12))}
+.mgal .img-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.3);color:#fff;border:none;width:35px;height:35px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;z-index:5}
+.mgal .img-nav:hover{background:rgba(0,0,0,.5)}
+.mgal .img-nav.prev{left:10px}
+.mgal .img-nav.next{right:10px}
 .mx{position:absolute;top:10px;right:10px;width:30px;height:30px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:var(--sh-sm);color:var(--g7);transition:all .15s;z-index:5}
 .mx:hover{background:var(--red);color:#fff}
 .mbadge-wrap{position:absolute;top:10px;left:10px;z-index:5}
@@ -321,20 +325,20 @@ footer{background:var(--g9);color:rgba(255,255,255,.65);padding:40px 0 20px}
   .ha-lbl strong{font-size:11px}
   .cbadge{font-size:9px;min-width:16px;height:16px;padding:0 3px}
   nav{background:#fff;border-top:1px solid var(--g2)}
-  .ni{flex-wrap:wrap;padding:0 15px}
-  .ni-item{display:block;width:100%;border-bottom:1px solid var(--g2)}
+  .ni{display:none;flex-wrap:wrap;padding:0 15px}
+  .ni-item{display:none;width:100%;border-bottom:1px solid var(--g2)}
   .nl{display:flex;width:100%;padding:12px 0;color:#fff;background:var(--blue);border-radius:0;margin:0}
   .nl:hover{background:var(--blue-dark)}
   .nl.copa{background:var(--gold);color:#1a1a1a}
   .narr{display:none}
-  .ndrop{background:#fff;border:none;border-top:2px solid var(--blue);box-shadow:none;display:block;max-height:none;overflow:visible}
+  .ndrop{background:#fff;border:none;border-top:2px solid var(--blue);box-shadow:none;display:none;max-height:none;overflow:visible}
   .ndrop a{border-bottom:1px solid var(--g2);padding:10px 15px}
   .ndrop a:hover{background:var(--blue-light);padding-left:15px}
   .pstrip{font-size:12px;padding:7px 15px}
   .pw{padding:0 15px}
   .hero-sec{padding:10px 0 0}
   .hero-lay{gap:8px}
-  .main-ban{height:260px}
+  .main-ban{height:300px}
   .bcon{padding:0 20px}
   .bey{font-size:10px}
   .btit{font-size:28px}
@@ -348,9 +352,8 @@ footer{background:var(--g9);color:rgba(255,255,255,.65);padding:40px 0 20px}
   .barr{width:32px;height:32px;font-size:18px}
   .barr.prev{left:6px}
   .barr.next{right:6px}
-  .sbans{flex-direction:column;gap:8px}
+  .sbans{display:none}
   .sban{height:140px}
-  .sban-tag{font-size:9px}
   .sban-tit{font-size:16px}
   .sban-btn{font-size:10px;padding:3px 9px}
   .cpstrip{margin-top:8px;padding:10px 15px;border-radius:6px}
@@ -695,12 +698,12 @@ footer{background:var(--g9);color:rgba(255,255,255,.65);padding:40px 0 20px}
       </div>
       <div>
         <div class="fct">Atendimento</div>
-        <div class="fcontact">📱 (XX) XXXXX-XXXX<br><br>📧 contato@nextmantos.com.br<br><br>🕐 Seg–Sáb: 9h às 18h</div>
+        <div class="fcontact">📱 +55 32 99990-9127<br><br>📧 contato@nextmantos.com.br<br><br>🕐 Seg–Sáb: 9h às 18h</div>
       </div>
       <div>
         <div class="fct">Pagamento</div>
         <div class="pmeth"><span class="pmb">PIX</span><span class="pmb">BOLETO</span><span class="pmb">VISA</span><span class="pmb">MASTER</span><span class="pmb">ELO</span><span class="pmb">AMEX</span></div>
-        <div class="fcontact">💳 Até <strong style="color:#fff;font-size:15px">12x sem juros</strong><br><br>🔒 SSL · PCI DSS Compliant</div>
+        <div class="fcontact">💳 Até <strong style="color:#fff;font-size:15px">3x sem juros</strong><br><br>🔒 SSL · PCI DSS Compliant</div>
       </div>
     </div>
     <div class="fbot">
@@ -710,7 +713,7 @@ footer{background:var(--g9);color:rgba(255,255,255,.65);padding:40px 0 20px}
   </div>
 </footer>
 
-<a class="wfloat" href="https://wa.me/55XXXXXXXXXXX" target="_blank"><div class="wring"></div>💬</a>
+<a class="wfloat" href="https://wa.me/+5532999909127" target="_blank"><div class="wring"></div>💬</a>
 
 <div class="doverlay" id="doverlay" onclick="closeCart()"></div>
 <div class="cdrawer" id="cdrawer">
@@ -724,7 +727,9 @@ footer{background:var(--g9);color:rgba(255,255,255,.65);padding:40px 0 20px}
     <div class="mgal" id="mgal">
       <button class="mx" onclick="closeModal()">✕</button>
       <div class="mbadge-wrap" id="mbadge"></div>
+      <button class="img-nav prev" onclick="changeModalImage(-1)">‹</button>
       <img id="mimg" src="" alt="" style="display:none">
+      <button class="img-nav next" onclick="changeModalImage(1)">›</button>
       <span class="mgal-ph" id="mph"></span>
     </div>
     <div class="minfo">
@@ -769,43 +774,43 @@ const LEAGUES = [
     id:'brasileiros', name:'Brasileirão Série A 2026', flag:'🇧🇷',
     teams:[
       {b:'Flamengo',        n:'Camisa Flamengo I 2026',              d:'Flamengo · Lançamento 26/27 · tailandesa 1:1 ',                  p:120.00, o:160.00,   tag:'hot', cat:['brasileiros','masculinas'], rev:421, img:'fotos/camisas/brasileiros/flamengo.png',       fb:'🏆'},
-      {b:'Palmeiras',       n:'Camisa Verdão I 2026',                   d:'Puma · Série A · Dry-Fit premium',                 p:184.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:512, img:'fotos/camisas/brasileiros/palmeiras.png',      fb:'🟢'},
-      {b:'Botafogo',        n:'Camisa Glorioso I 2026',                 d:'Reebok · Vice-campeão · Patches CBF',              p:179.90, o:199.90, tag:'off', cat:['brasileiros','masculinas'], rev:287, img:'fotos/camisas/brasileiros/botafogo.png',       fb:'⭐'},
-      {b:'Corinthians',     n:'Camisa Fiel I 2026',                     d:'Nike · Parque São Jorge Edition',                  p:179.90, o:209.90, tag:'off', cat:['brasileiros','masculinas'], rev:389, img:'fotos/camisas/brasileiros/corinthians.png',    fb:'⚫'},
-      {b:'Fluminense',      n:'Camisa Tricolor Carioca I 2026',         d:'Umbro · Dry-Fit · Patches CBF',                   p:169.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:198, img:'fotos/camisas/brasileiros/fluminense.png',     fb:'🔴'},
-      {b:'São Paulo',       n:'Camisa Tricolor Paulista I 2026',        d:'New Balance · SPFC · Dry-Fit',                    p:174.90, o:194.90, tag:'off', cat:['brasileiros','masculinas'], rev:204, img:'fotos/camisas/brasileiros/sao-paulo.png',      fb:'🔺'},
-      {b:'Atlético MG',     n:'Camisa Galo I 2026',                     d:'Le Coq Sportif · Série A · Dry-Fit',              p:169.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:178, img:'fotos/camisas/brasileiros/atletico-mg.png',    fb:'🦅'},
-      {b:'Cruzeiro',        n:'Camisa Raposa Celeste I 2026',           d:'Umbro · Patches oficiais · Dry-Fit',              p:169.90, o:189.90, tag:'off', cat:['brasileiros','masculinas'], rev:93,  img:'fotos/camisas/brasileiros/cruzeiro.png',       fb:'💙'},
-      {b:'Grêmio',          n:'Camisa Tricolor Gaúcho I 2026',          d:'Umbro · Série A · Dry-Fit',                       p:164.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:155, img:'fotos/camisas/brasileiros/gremio.png',         fb:'🔵'},
-      {b:'Internacional',   n:'Camisa Colorado I 2026',                 d:'Adidas · Série A · Patches CBF',                  p:174.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:167, img:'fotos/camisas/brasileiros/internacional.png',  fb:'❤️'},
-      {b:'Vasco da Gama',   n:'Camisa Vasco I 2026',                    d:'Kappa · Série A · Dry-Fit',                       p:164.90, o:184.90, tag:'off', cat:['brasileiros','masculinas'], rev:147, img:'fotos/camisas/brasileiros/vasco.png',          fb:'⚔️'},
-      {b:'Bahia',           n:'Camisa Tricolor Baiano I 2026',          d:'Esquadro de Aço · Dry-Fit',                       p:159.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:88,  img:'fotos/camisas/brasileiros/bahia.png',          fb:'🔵'},
-      {b:'RB Bragantino',   n:'Camisa Massa Bruta I 2026',              d:'Castore · Série A · Dry-Fit',                     p:154.90, o:174.90, tag:'off', cat:['brasileiros','masculinas'], rev:61,  img:'fotos/camisas/brasileiros/rb-bragantino.png',  fb:'🔴'},
-      {b:'Santos',          n:'Camisa Peixe I 2026',                    d:'Umbro · Retorno à Série A · Dry-Fit',             p:164.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:213, img:'fotos/camisas/brasileiros/santos.png',         fb:'⚪'},
-      {b:'Mirassol',        n:'Camisa Leão da Mata I 2026',             d:'Penalty · Série A · Primeiro ano',                p:149.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:34,  img:'fotos/camisas/brasileiros/mirassol.png',       fb:'🦁'},
-      {b:'Ceará',           n:'Camisa Vozão I 2026 (promovido)',        d:'Penalty · Retorno · Dry-Fit',                     p:149.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:44,  img:'fotos/camisas/brasileiros/ceara.png',          fb:'⚫'},
-      {b:'Sport',           n:'Camisa Sport Recife I 2026 (promovido)', d:'Topper · Retorno à Série A',                      p:149.90, o:169.90, tag:'off', cat:['brasileiros','masculinas'], rev:38,  img:'fotos/camisas/brasileiros/sport.png',          fb:'🔴'},
-      {b:'Vitória',         n:'Camisa Rubro-Negro Baiano I 2026',       d:'Penalty · Série A · Dry-Fit',                     p:154.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:52,  img:'fotos/camisas/brasileiros/vitoria.png',        fb:'🔴'},
-      {b:'Fortaleza',       n:'Camisa Leão do Pici I 2026',             d:'Lobo Sport · Série A · Dry-Fit',                  p:154.90, o:174.90, tag:'off', cat:['brasileiros','masculinas'], rev:71,  img:'fotos/camisas/brasileiros/fortaleza.png',      fb:'🦁'},
-      {b:'Juventude',       n:'Camisa Ju I 2026',                       d:'Puma · Série A · Dry-Fit',                        p:149.90, o:null,   tag:'novo',cat:['brasileiros','masculinas'], rev:29,  img:'fotos/camisas/brasileiros/juventude.png',      fb:'🟢'},
+      {b:'Palmeiras',       n:'Camisa Verdão I 2026',                   d:'Puma · Série A · Dry-Fit premium',                 p:120.00, o:160.00,   tag:'novo',cat:['brasileiros','masculinas'], rev:512, img:'fotos/camisas/brasileiros/palmeiras.png',      fb:'🟢'},
+      {b:'Botafogo',        n:'Camisa Glorioso I 2026',                 d:'Reebok · Vice-campeão · Patches CBF',              p:120.00, o:160.00, tag:'off', cat:['brasileiros','masculinas'], rev:287, img:'fotos/camisas/brasileiros/botafogo.png',       fb:'⭐'},
+      {b:'Corinthians',     n:'Camisa Fiel I 2026',                     d:'Nike · Parque São Jorge Edition',                  p:179.90, o:160.00, tag:'off', cat:['brasileiros','masculinas'], rev:389, img:'fotos/camisas/brasileiros/corinthians.png',    fb:'⚫'},
+      {b:'Fluminense',      n:'Camisa Tricolor Carioca I 2026',         d:'Umbro · Dry-Fit · Patches CBF',                   p:169.90, o:160.00,   tag:'novo',cat:['brasileiros','masculinas'], rev:198, img:'fotos/camisas/brasileiros/fluminense.png',     fb:'🔴'},
+      {b:'São Paulo',       n:'Camisa Tricolor Paulista I 2026',        d:'New Balance · SPFC · Dry-Fit',                    p:174.90, o:160.00, tag:'off', cat:['brasileiros','masculinas'], rev:204, img:'fotos/camisas/brasileiros/sao-paulo.png',      fb:'🔺'},
+      {b:'Atlético MG',     n:'Camisa Galo I 2026',                     d:'Le Coq Sportif · Série A · Dry-Fit',              p:120.00,  o:160.00,   tag:'novo',cat:['brasileiros','masculinas'], rev:178, img:'fotos/camisas/brasileiros/atletico-mg.png',    fb:'🦅'},
+      {b:'Cruzeiro',        n:'Camisa Raposa Celeste I 2026',           d:'Umbro · Patches oficiais · Dry-Fit',              p:120.00, o:160.00, tag:'off', cat:['brasileiros','masculinas'], rev:93,  img:'fotos/camisas/brasileiros/cruzeiro.png',       fb:'💙'},
+      {b:'Grêmio',          n:'Camisa Tricolor Gaúcho I 2026',          d:'Umbro · Série A · Dry-Fit',                       p:120.00,  o:160.00,   tag:'novo',cat:['brasileiros','masculinas'], rev:155, img:'fotos/camisas/brasileiros/gremio.png',         fb:'🔵'},
+      {b:'Internacional',   n:'Camisa Colorado I 2026',                 d:'Adidas · Série A · Patches CBF',                  p:120.00, o:160.00,   tag:'novo',cat:['brasileiros','masculinas'], rev:167, img:'fotos/camisas/brasileiros/internacional.png',  fb:'❤️'},
+      {b:'Vasco da Gama',   n:'Camisa Vasco I 2026',                    d:'Kappa · Série A · Dry-Fit',                       p:120.00, o:160.00, tag:'off', cat:['brasileiros','masculinas'], rev:147, img:'fotos/camisas/brasileiros/vasco.png',          fb:'⚔️'},
+      {b:'Bahia',           n:'Camisa Tricolor Baiano I 2026',          d:'Esquadro de Aço · Dry-Fit',                       p:120.00, o:160.00,   tag:'novo',cat:['brasileiros','masculinas'], rev:88,  img:'fotos/camisas/brasileiros/bahia.png',          fb:'🔵'},
+      {b:'RB Bragantino',   n:'Camisa Massa Bruta I 2026',              d:'Castore · Série A · Dry-Fit',                     p:120.00, o:160.00, tag:'off', cat:['brasileiros','masculinas'], rev:61,  img:'fotos/camisas/brasileiros/rb-bragantino.png',  fb:'🔴'},
+      {b:'Santos',          n:'Camisa Peixe I 2026',                    d:'Umbro · Retorno à Série A · Dry-Fit',             p:120.00, o:160.00,   tag:'novo',cat:['brasileiros','masculinas'], rev:213, img:'fotos/camisas/brasileiros/santos.png',         fb:'⚪'},
+      {b:'Mirassol',        n:'Camisa Leão da Mata I 2026',             d:'Penalty · Série A · Primeiro ano',                p:120.00, o:160.00,   tag:'novo',cat:['brasileiros','masculinas'], rev:34,  img:'fotos/camisas/brasileiros/mirassol.png',       fb:'🦁'},
+      {b:'Ceará',           n:'Camisa Vozão I 2026 (promovido)',        d:'Penalty · Retorno · Dry-Fit',                     p:120.00, o:160.00,   tag:'novo',cat:['brasileiros','masculinas'], rev:44,  img:'fotos/camisas/brasileiros/ceara.png',          fb:'⚫'},
+      {b:'Sport',           n:'Camisa Sport Recife I 2026 (promovido)', d:'Topper · Retorno à Série A',                      p:120.00, o:160.00, tag:'off', cat:['brasileiros','masculinas'], rev:38,  img:'fotos/camisas/brasileiros/sport.png',          fb:'🔴'},
+      {b:'Vitória',         n:'Camisa Rubro-Negro Baiano I 2026',       d:'Penalty · Série A · Dry-Fit',                     p:120.00, o:160.00,   tag:'novo',cat:['brasileiros','masculinas'], rev:52,  img:'fotos/camisas/brasileiros/vitoria.png',        fb:'🔴'},
+      {b:'Fortaleza',       n:'Camisa Leão do Pici I 2026',             d:'Lobo Sport · Série A · Dry-Fit',                  p:120.00, o:160.00, tag:'off', cat:['brasileiros','masculinas'], rev:71,  img:'fotos/camisas/brasileiros/fortaleza.png',      fb:'🦁'},
+      {b:'Juventude',       n:'Camisa Ju I 2026',                       d:'Puma · Série A · Dry-Fit',                        p:120.00 , o:160.00,   tag:'novo',cat:['brasileiros','masculinas'], rev:29,  img:'fotos/camisas/brasileiros/juventude.png',      fb:'🟢'},
     ]
   },
   {
     id:'premier', name:'Premier League 2025/26', flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',
     teams:[
-      {b:'Liverpool',       n:'Camisa Reds 25/26 — Home',               d:'Nike · Campeão 24/25 · Premier League',           p:229.90, o:null,   tag:'hot', cat:['premier','europeus','masculinas'], rev:312, img:'fotos/camisas/premier/liverpool.png',       fb:'🔴'},
-      {b:'Manchester City', n:'Camisa Citizens 25/26 — Home',           d:'Puma · Premier League · Dry-Fit',                 p:234.90, o:259.90, tag:'off', cat:['premier','europeus','masculinas'], rev:198, img:'fotos/camisas/premier/man-city.png',        fb:'🔵'},
-      {b:'Arsenal',         n:'Camisa Gunners 25/26 — Home',            d:'Adidas · Premier League · Patches',               p:224.90, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:267, img:'fotos/camisas/premier/arsenal.png',         fb:'🔴'},
-      {b:'Chelsea',         n:'Camisa Blues 25/26 — Home',              d:'Nike · Premier League · Slim Fit',                p:219.90, o:249.90, tag:'off', cat:['premier','europeus','masculinas'], rev:119, img:'fotos/camisas/premier/chelsea.png',         fb:'🔵'},
-      {b:'Manchester United',n:'Camisa Red Devils 25/26 — Home',        d:'Adidas · Premier League · Versão jogador',        p:224.90, o:259.90, tag:'off', cat:['premier','europeus','masculinas'], rev:214, img:'fotos/camisas/premier/man-united.png',      fb:'🔴'},
-      {b:'Newcastle United',n:'Camisa Magpies 25/26 — Home',           d:'Castore · Premier League · Patches',              p:209.90, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:78,  img:'fotos/camisas/premier/newcastle.png',       fb:'⚫'},
-      {b:'Tottenham',       n:'Camisa Spurs 25/26 — Home',              d:'Nike · Premier League · Dry-Fit',                 p:219.90, o:249.90, tag:'off', cat:['premier','europeus','masculinas'], rev:143, img:'fotos/camisas/premier/tottenham.png',       fb:'⚪'},
-      {b:'Aston Villa',     n:'Camisa Villa 25/26 — Home',              d:'Adidas · Premier League',                        p:204.90, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:67,  img:'fotos/camisas/premier/aston-villa.png',     fb:'🍷'},
-      {b:'Brighton',        n:'Camisa Seagulls 25/26 — Home',           d:'Nike · Premier League · Patches',                 p:199.90, o:219.90, tag:'off', cat:['premier','europeus','masculinas'], rev:54,  img:'fotos/camisas/premier/brighton.png',        fb:'🔵'},
-      {b:'Everton',         n:'Camisa Toffees 25/26 — Home',            d:'Hummel · Premier League',                        p:199.90, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:41,  img:'fotos/camisas/premier/everton.png',         fb:'🔵'},
-      {b:'West Ham',        n:'Camisa Hammers 25/26 — Home',            d:'Umbro · Premier League · Dry-Fit',               p:199.90, o:219.90, tag:'off', cat:['premier','europeus','masculinas'], rev:58,  img:'fotos/camisas/premier/west-ham.png',        fb:'🔨'},
-      {b:'Fulham',          n:'Camisa Cottagers 25/26 — Home',          d:'Adidas · Premier League',                        p:194.90, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:33,  img:'fotos/camisas/premier/fulham.png',          fb:'⚪'},
-      {b:'Wolverhampton',   n:'Camisa Wolves 25/26 — Home',             d:'Castore · Premier League',                       p:199.90, o:219.90, tag:'off', cat:['premier','europeus','masculinas'], rev:47,  img:'fotos/camisas/premier/wolves.png',          fb:'🟡'},
+      {b:'Liverpool',       n:'Camisa Reds 25/26 — Home',               d:'Nike · Campeão 24/25 · Premier League',           p:120.00, o:null,   tag:'hot', cat:['premier','europeus','masculinas'], rev:312, img:'fotos/camisas/premier/liverpool.png',       fb:'🔴'},
+      {b:'Manchester City', n:'Camisa Citizens 25/26 — Home',           d:'Puma · Premier League · Dry-Fit',                 p:120.00, o:259.90, tag:'off', cat:['premier','europeus','masculinas'], rev:198, img:'fotos/camisas/premier/man-city.png',        fb:'🔵'},
+      {b:'Arsenal',         n:'Camisa Gunners 25/26 — Home',            d:'Adidas · Premier League · Patches',               p:120.00, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:267, img:'fotos/camisas/premier/arsenal.png',         fb:'🔴'},
+      {b:'Chelsea',         n:'Camisa Blues 25/26 — Home',              d:'Nike · Premier League · Slim Fit',                p:120.00, o:249.90, tag:'off', cat:['premier','europeus','masculinas'], rev:119, img:'fotos/camisas/premier/chelsea.png',         fb:'🔵'},
+      {b:'Manchester United',n:'Camisa Red Devils 25/26 — Home',        d:'Adidas · Premier League · Versão jogador',        p:120, o:259.90, tag:'off', cat:['premier','europeus','masculinas'], rev:214, img:'fotos/camisas/premier/man-united.png',      fb:'🔴'},
+      {b:'Newcastle United',n:'Camisa Magpies 25/26 — Home',           d:'Castore · Premier League · Patches',              p:120.00, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:78,  img:'fotos/camisas/premier/newcastle.png',       fb:'⚫'},
+      {b:'Tottenham',       n:'Camisa Spurs 25/26 — Home',              d:'Nike · Premier League · Dry-Fit',                 p:120.00, o:249.90, tag:'off', cat:['premier','europeus','masculinas'], rev:143, img:'fotos/camisas/premier/tottenham.png',       fb:'⚪'},
+      {b:'Aston Villa',     n:'Camisa Villa 25/26 — Home',              d:'Adidas · Premier League',                        p:120.00, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:67,  img:'fotos/camisas/premier/aston-villa.png',     fb:'🍷'},
+      {b:'Brighton',        n:'Camisa Seagulls 25/26 — Home',           d:'Nike · Premier League · Patches',                 p:120.00, o:219.90, tag:'off', cat:['premier','europeus','masculinas'], rev:54,  img:'fotos/camisas/premier/brighton.png',        fb:'🔵'},
+      {b:'Everton',         n:'Camisa Toffees 25/26 — Home',            d:'Hummel · Premier League',                        p:120.00, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:41,  img:'fotos/camisas/premier/everton.png',         fb:'🔵'},
+      {b:'West Ham',        n:'Camisa Hammers 25/26 — Home',            d:'Umbro · Premier League · Dry-Fit',               p:120.00, o:219.90, tag:'off', cat:['premier','europeus','masculinas'], rev:58,  img:'fotos/camisas/premier/west-ham.png',        fb:'🔨'},
+      {b:'Fulham',          n:'Camisa Cottagers 25/26 — Home',          d:'Adidas · Premier League',                        p:120.00, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:33,  img:'fotos/camisas/premier/fulham.png',          fb:'⚪'},
+      {b:'Wolverhampton',   n:'Camisa Wolves 25/26 — Home',             d:'Castore · Premier League',                       p:120.00, o:219.90, tag:'off', cat:['premier','europeus','masculinas'], rev:47,  img:'fotos/camisas/premier/wolves.png',          fb:'🟡'},
       {b:'Crystal Palace',  n:'Camisa Eagles 25/26 — Home',             d:'Macron · Premier League',                        p:194.90, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:39,  img:'fotos/camisas/premier/crystal-palace.png',  fb:'🦅'},
       {b:'Brentford',       n:'Camisa Bees 25/26 — Home',               d:'Umbro · Premier League',                         p:189.90, o:209.90, tag:'off', cat:['premier','europeus','masculinas'], rev:28,  img:'fotos/camisas/premier/brentford.png',       fb:'🐝'},
       {b:'Nottm Forest',    n:'Camisa Forest 25/26 — Home',             d:'Adidas · Premier League',                        p:199.90, o:null,   tag:'novo',cat:['premier','europeus','masculinas'], rev:55,  img:'fotos/camisas/premier/nottm-forest.png',    fb:'🌲'},
@@ -938,13 +943,21 @@ const P = [];
 let idC = 1;
 LEAGUES.forEach(lg => {
   lg.teams.forEach(t => {
-    P.push({...t, id:idC++, league:lg.id});
+    let photos = [];
+    if(Array.isArray(t.photos) && t.photos.length>=2){
+      photos = t.photos;
+    } else if(t.img){
+      const ext = t.img.match(/\.[^.]+$/);
+      const p2 = ext ? t.img.replace(/(\.[^.]+)$/, '-2$1') : t.img;
+      photos = [t.img, p2];
+    }
+    P.push({...t, id:idC++, league:lg.id, photos});
   });
 });
 
 const TL={hot:'🔥 +Vendida',off:'% OFF',copa:'Copa 2026',novo:'Novo'};
 const TC={hot:'bn',off:'bo',copa:'bc',novo:'bn'};
-let cart=[],amp=null,sl=0,currentFilter='all';
+let cart=[],amp=null,sl=0,currentFilter='all',modalPhotoIndex=0;
 
 function toSlug(text){
   return text.toString().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
@@ -966,7 +979,7 @@ buildDrops();
 
 /* ─── PRODUCT CARD HTML ─── */
 function cardHtml(p){
-  const inst=(p.p/12).toFixed(2).replace('.',',');
+  const inst=(p.p/3).toFixed(2).replace('.',',');
   const disc=p.o?Math.round((1-p.p/p.o)*100):null;
   return`<div class="pcard" onclick="om(${p.id})">
     ${p.tag?`<div class="cbadge2 ${TC[p.tag]}">${TL[p.tag]}</div>`:''}
@@ -989,9 +1002,9 @@ function cardHtml(p){
           <div class="cprice">R$ ${p.p.toFixed(2).replace('.',',')}</div>
           ${disc?`<span class="cdisc">-${disc}%</span>`:''}
         </div>
-        <div class="cpinst">12x R$ ${inst} sem juros</div>
+        <div class="cpinst">3x R$ ${ (p.p/3).toFixed(2).replace('.',',') } sem juros</div>
       </div>
-      <button class="cadd" onclick="event.stopPropagation();qa(${p.id})">🛒 COMPRAR</button>
+      <button class="cadd" onclick="event.stopPropagation();om(${p.id})">🛒 COMPRAR</button>
     </div>
   </div>`;
 }
@@ -1018,8 +1031,8 @@ function renderAll(filter='all'){
       leagueFilters.includes(filter) ? P.filter(p=>p.league===lg.id) :
       P.filter(p=>p.league===lg.id&&p.cat.includes(filter));
 
-    const show = filter==='all' ? items.slice(0,5) :
-      items.filter(Boolean).slice(0, items.length <= 5 ? items.length : 10);
+    const show = filter==='all' ? items.slice(0, items.length) :
+      items.filter(Boolean).slice(0, items.length);
 
     if(!show.length||show.filter(Boolean).length===0)return;
     totalShown+=show.filter(Boolean).length;
@@ -1140,11 +1153,25 @@ function doSearch(){
 document.getElementById('srch').addEventListener('keydown',e=>{if(e.key==='Enter')doSearch();});
 
 /* ─── MODAL ─── */
+function renderModalImage(p){
+  const img=document.getElementById('mimg'),ph=document.getElementById('mph');
+  const photos=(p.photos && p.photos.length)?p.photos:[p.img];
+  const idx=((modalPhotoIndex%photos.length)+photos.length)%photos.length;
+  const current=photos[idx]||p.img;
+  img.src=current;img.alt='Camisa '+p.b;img.style.display='block';ph.style.display='none';
+  img.onerror=()=>{img.style.display='none';ph.style.display='block';ph.textContent=p.fb;};
+}
+
+function changeModalImage(direction){
+  if(!amp||!amp.photos||amp.photos.length===0)return;
+  modalPhotoIndex=(modalPhotoIndex+direction+amp.photos.length)%amp.photos.length;
+  renderModalImage(amp);
+}
+
 function om(id){
   const p=P.find(x=>x.id===id);if(!p)return;amp=p;
-  const img=document.getElementById('mimg'),ph=document.getElementById('mph');
-  img.src=p.img;img.alt='Camisa '+p.b;img.style.display='block';ph.style.display='none';
-  img.onerror=()=>{img.style.display='none';ph.style.display='block';ph.textContent=p.fb;};
+  modalPhotoIndex=0;
+  renderModalImage(p);
   document.getElementById('mbrand').textContent=p.b;
   document.getElementById('mname').textContent=p.n;
   document.getElementById('mdesc').textContent=p.d+'. Material Dry-Fit de alta tecnologia. Personalize com nome e número.';
@@ -1152,7 +1179,7 @@ function om(id){
   document.getElementById('mpold').innerHTML=p.o?`<div class="mpold">De: R$ ${p.o.toFixed(2).replace('.',',')}</div>`:'';
   const disc=p.o?Math.round((1-p.p/p.o)*100):null;
   document.getElementById('mdisc').innerHTML=disc?`<span class="mdisc">-${disc}%</span>`:'';
-  document.getElementById('mpinst').textContent='ou 12x de R$ '+(p.p/12).toFixed(2).replace('.',',')+' sem juros';
+  document.getElementById('mpinst').textContent='ou 3x de R$ '+(p.p/3).toFixed(2).replace('.',',')+' sem juros';
   document.getElementById('mbadge').innerHTML=p.tag?`<div class="cbadge2 ${TC[p.tag]}">${TL[p.tag]}</div>`:'';
   document.getElementById('mrev').textContent='4.9 ('+p.rev+' avaliações)';
   document.getElementById('mnome').value='';document.getElementById('mnum').value='';
@@ -1200,10 +1227,10 @@ function rd(){
       <span class="cirm" onclick="ri(${i})">🗑 Remover</span>
     </div>
   </div>`).join('');
-  const sub=cart.reduce((s,c)=>s+c.p*c.qty,0),frete=sub>=199?0:19.90,total=sub+frete,qt=cart.reduce((s,c)=>s+c.qty,0);
+  const sub=cart.reduce((s,c)=>s+c.p*c.qty,0),frete=0,total=sub+frete,qt=cart.reduce((s,c)=>s+c.qty,0);
   df.innerHTML=`<div class="dfooter">
     <div class="dtr"><span>Subtotal (${qt} itens)</span><span>R$ ${sub.toFixed(2).replace('.',',')}</span></div>
-    <div class="dtr ${frete===0?'fg':''}"><span>Frete</span><span>${frete===0?'🎁 GRÁTIS':'R$ '+frete.toFixed(2).replace('.',',')}</span></div>
+    <div class="dtr fg"><span>Frete</span><span>🎁 GRÁTIS</span></div>
     <div class="dtr main"><span>Total</span><span>R$ ${total.toFixed(2).replace('.',',')}</span></div>
     <div style="margin-top:11px">
       <button class="bwpp" onclick="wpp()">💬 FINALIZAR VIA WHATSAPP</button>
@@ -1229,6 +1256,30 @@ function sn(){gs((sl+1)%3);}function sp(){gs((sl+2)%3);}
 setInterval(sn,5000);
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeCart();}});
+
+if (window.innerWidth <= 768) {
+
+  document.querySelectorAll('.nl').forEach(nl => {
+
+    nl.addEventListener('click', function(e) {
+
+      e.preventDefault();
+
+      toggleNav(this);
+
+    });
+
+  });
+
+}
+
+function toggleNav(el) {
+
+  const drop = el.parentElement.querySelector('.ndrop');
+
+  drop.classList.toggle('open');
+
+}
 </script>
 </body>
 </html>
